@@ -4,22 +4,19 @@
 (function () {
   "use strict";
 
-  /* ---------- noren opening (once per session) ---------- */
+  /* ---------- noren opening (EVERY visit) + celebration fireworks ---------- */
   const noren = document.querySelector(".noren");
   if (noren) {
-    if (sessionStorage.getItem("norenSeen")) {
-      noren.classList.add("gone");
-    } else {
-      document.body.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    setTimeout(() => {
+      noren.classList.add("open");
+      // fireworks burst as the curtains part — reads over day OR night hero
+      setTimeout(() => { if (window.__heroFireworks) window.__heroFireworks(); }, 470);
       setTimeout(() => {
-        noren.classList.add("open");
-        sessionStorage.setItem("norenSeen", "1");
-        setTimeout(() => {
-          noren.classList.add("gone");
-          document.body.style.overflow = "";
-        }, 1150);
-      }, 950);
-    }
+        noren.classList.add("gone");
+        document.body.style.overflow = "";
+      }, 1150);
+    }, 900);
   }
 
   /* ---------- header scroll state ---------- */
@@ -131,6 +128,8 @@
       default: ["#e3c98a", "#f2f0e9", "#c9a24b", "#e9b7c3", "#7fa8c9"],
       pink: ["#ff4d88", "#ffd166", "#f2f0e9", "#ff8fb3", "#5ec8e5"],
       gold: ["#e3c98a", "#b98a2f", "#fff3d6", "#f2f0e9", "#c9a24b"],
+      // reads well over both the day (blue) and night (dark) hero
+      celebration: ["#e3c98a", "#e2543f", "#e9b7c3", "#8fc7e5", "#fff3d6", "#c9a24b"],
     };
 
     function burst(x, y, palette) {
@@ -180,6 +179,17 @@
         setTimeout(() => burst(x + (Math.random() * 200 - 100), y - 40, pal), 460);
       });
     });
+
+    // celebration launch over the hero — fired by the noren opening on every visit
+    window.__heroFireworks = function () {
+      const cx = window.innerWidth / 2;
+      const midY = window.innerHeight * 0.42;
+      const spread = window.innerWidth;
+      burst(cx, midY, "celebration");
+      setTimeout(() => burst(cx - spread * 0.22, midY - 46, "celebration"), 220);
+      setTimeout(() => burst(cx + spread * 0.24, midY + 12, "celebration"), 470);
+      setTimeout(() => burst(cx + spread * 0.05, midY - 92, "celebration"), 780);
+    };
   }
 
   /* ---------- time-of-day sky (hub hero) ---------- */
