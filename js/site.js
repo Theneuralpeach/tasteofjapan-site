@@ -1,4 +1,4 @@
-/* Taste of Japan — shared behaviors
+/* Taste of Japan / shared behaviors
    noren opening / EN-JP toggle / countdown / lanterns / tilt / fireworks / reveal / sky */
 
 (function () {
@@ -10,7 +10,7 @@
     document.body.style.overflow = "hidden";
     setTimeout(() => {
       noren.classList.add("open");
-      // fireworks burst as the curtains part — reads over day OR night hero
+      // fireworks burst as the curtains part / reads over day OR night hero
       setTimeout(() => { if (window.__heroFireworks) window.__heroFireworks(); }, 470);
       setTimeout(() => {
         noren.classList.add("gone");
@@ -180,7 +180,7 @@
       });
     });
 
-    // celebration launch over the hero — fired by the noren opening on every visit
+    // celebration launch over the hero / fired by the noren opening on every visit
     window.__heroFireworks = function () {
       const cx = window.innerWidth / 2;
       const midY = window.innerHeight * 0.42;

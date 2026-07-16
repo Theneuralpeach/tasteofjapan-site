@@ -1,5 +1,5 @@
 /* ============================================================
-   SIP OF JAPAN — indigo x gold world
+   SIP OF JAPAN / indigo x gold world
    Washi cream, deep navy, gold leaf. Quiet, premium, adult.
    ============================================================ */
 
@@ -190,7 +190,7 @@ body.sip .eyebrow::before { background: var(--sip-gold); }
 .sponsor-card .amount { font-family: var(--font-serif-en); font-size: 44px; font-weight: 600; margin: 8px 0 14px; }
 .sponsor-card ul { display: grid; gap: 9px; font-size: 13.8px; color: #3c4557; }
 .sponsor-card li { display: flex; gap: 10px; }
-.sponsor-card li::before { content: "—"; color: var(--sip-gold); }
+.sponsor-card li::before { content: "▪"; color: var(--sip-gold); }
 
 /* ---------- venue band ---------- */
 .sip-venue {
