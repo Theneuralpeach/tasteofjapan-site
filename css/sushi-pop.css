@@ -222,3 +222,7 @@ body.sushi-pop {
 .sp-tier.featured .tier-name { color: var(--sp-pink-hot); opacity: 1; }
 .sp-tier .tier-price { font-family: var(--font-display); font-size: clamp(34px, 4vw, 46px); margin-top: 8px; }
 .sp-tier .tier-price sup { font-size: .5em; }
+
+/* sponsorship ways — sushi pop accent */
+body.sushi-pop .way::before { color: var(--sp-pink); }
+body.sushi-pop .way:hover { border-color: var(--sp-pink); }

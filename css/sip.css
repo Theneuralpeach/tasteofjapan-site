@@ -201,3 +201,7 @@ body.sip .eyebrow::before { background: var(--sip-gold); }
 }
 .sip-venue h3 { font-family: var(--font-serif-en); font-size: clamp(24px, 3vw, 34px); font-weight: 600; margin-bottom: 8px; }
 .sip-venue p { opacity: .82; }
+
+/* sponsorship ways — sip accent */
+body.sip .way::before { color: var(--sip-gold); }
+body.sip .way:hover { border-color: var(--sip-gold); }
