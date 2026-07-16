@@ -226,3 +226,6 @@ body.sushi-pop {
 /* sponsorship ways — sushi pop accent */
 body.sushi-pop .way::before { color: var(--sp-pink); }
 body.sushi-pop .way:hover { border-color: var(--sp-pink); }
+
+/* lineup section sits on dark navy — lift the body copy for contrast */
+.sp-lineup .section-lead { color: rgba(243, 234, 216, .82); }

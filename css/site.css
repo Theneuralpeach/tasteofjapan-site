@@ -349,8 +349,23 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
   display: flex; align-items: center; justify-content: space-between;
   gap: 30px; flex-wrap: wrap; padding: 40px 0;
 }
-.next-up .label { font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--red); font-weight: 700; margin-bottom: 6px; }
-.next-up .event-name { font-family: var(--font-display); font-size: clamp(22px, 3vw, 32px); }
+.next-up .label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-display);
+  font-size: 15px; letter-spacing: .26em; text-transform: uppercase;
+  color: #fff; font-weight: 700; margin-bottom: 12px;
+  background: var(--red); padding: 7px 18px 7px 15px; border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(178, 58, 47, .3);
+}
+.next-up .label::before {
+  content: ""; width: 9px; height: 9px; border-radius: 50%;
+  background: #fff; animation: pulse-dot 1.8s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .35; transform: scale(.7); }
+}
+.next-up .event-name { font-family: var(--font-display); font-size: clamp(26px, 3.6vw, 40px); line-height: 1.15; }
 
 /* archive teaser */
 .archive-card {
