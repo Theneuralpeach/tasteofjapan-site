@@ -1,15 +1,4 @@
 /* ============================================================
-   AGHARTI — Monica's north star display face.
-   Condensed cut: heavy enough to carry a headline, narrow enough
-   that it never reads as shouting. Subset to Latin, served as woff2.
-   ============================================================ */
-@font-face {
-  font-family: "Agharti";
-  src: url("../assets/fonts/agharti.woff2") format("woff2");
-  font-weight: 400; font-style: normal; font-display: swap;
-}
-
-/* ============================================================
    TASTE OF JAPAN / shared design system
    Brand: hokusai blue x washi x gold. Events override via body class.
    ============================================================ */
@@ -26,8 +15,8 @@
   --sakura: #e9b7c3;
   --red: #b23a2f;
   --white: #ffffff;
-  --font-display: "Agharti", "Zen Old Mincho", serif;
-  --font-ui: "Agharti", "Zen Old Mincho", serif;
+  --font-display: "Shippori Mincho B1", "Zen Old Mincho", serif;
+  --font-ui: "Shippori Mincho B1", "Zen Old Mincho", serif;
   --font-num: "Zen Old Mincho", "Shippori Mincho", serif;
   --font-serif: "Shippori Mincho", serif;
   --font-serif-en: "Cormorant Garamond", "Shippori Mincho", serif;
@@ -79,7 +68,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .brand {
   display: flex; align-items: center; gap: 10px;
-  font-family: var(--font-display); font-weight: 400;
+  font-family: var(--font-display); font-weight: 800;
   font-size: 17px; letter-spacing: .14em; text-transform: uppercase;
 }
 .brand .kamon {
@@ -148,7 +137,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   background: rgba(250,246,236,.06);
 }
 .noren-mark .word {
-  margin-top: 18px; font-family: var(--font-display); font-weight: 400;
+  margin-top: 18px; font-family: var(--font-display); font-weight: 800;
   font-size: 15px; letter-spacing: .5em; text-transform: uppercase;
   padding-left: .5em;
   white-space: nowrap;
@@ -165,7 +154,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .eyebrow::before { content: ""; width: 34px; height: 1.5px; background: var(--gold); }
 .section-title {
-  font-family: var(--font-display); font-weight: 400;
+  font-family: var(--font-display); font-weight: 800;
   font-size: clamp(30px, 4.6vw, 52px);
   line-height: 1.12; letter-spacing: .015em;
   margin: 14px 0 18px;
@@ -174,7 +163,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 .btn {
   display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--font-display); font-weight: 400; letter-spacing: .1em; text-transform: uppercase;
+  font-family: var(--font-display); font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
   font-size: 15px;
   padding: 15px 34px; border-radius: 999px;
   background: var(--ink); color: var(--washi);
@@ -243,18 +232,18 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .event-card .date-ribbon {
   position: absolute; top: 16px; left: -6px;
   background: var(--red); color: #fff;
-  font-family: var(--font-display); font-weight: 400; letter-spacing: .08em;
+  font-family: var(--font-display); font-weight: 800; letter-spacing: .08em;
   font-size: 13.5px; padding: 8px 18px 8px 20px;
   clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 50%, 100% 100%, 0 100%);
   box-shadow: 0 4px 12px rgba(178,58,47,.4);
 }
 .event-card .meta { padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-.event-card h3 { font-family: var(--font-display); font-weight: 400; font-size: 25px; letter-spacing: .02em; }
+.event-card h3 { font-family: var(--font-display); font-weight: 800; font-size: 25px; letter-spacing: .02em; }
 .event-card .venue { font-size: 13.5px; color: var(--ink-soft); letter-spacing: .04em; }
 .event-card .tagline { font-family: var(--font-serif); font-size: 15px; color: var(--hokusai); }
 .event-card .card-cta {
   margin-top: auto; padding-top: 14px;
-  font-family: var(--font-display); font-weight: 400; font-size: 13.5px; letter-spacing: .14em; text-transform: uppercase;
+  font-family: var(--font-display); font-weight: 800; font-size: 13.5px; letter-spacing: .14em; text-transform: uppercase;
   color: var(--red); display: inline-flex; gap: 8px; align-items: center;
 }
 .event-card .card-cta::after { content: "→"; transition: transform .25s; }
@@ -333,7 +322,7 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
   letter-spacing: .5em; padding-left: .5em; opacity: .92;
 }
 .hero-title {
-  font-family: var(--font-display); font-weight: 400;
+  font-family: var(--font-display); font-weight: 800;
   font-size: clamp(54px, 11vw, 148px);
   line-height: .98; letter-spacing: .015em;
   margin: 18px 0 8px;
@@ -364,7 +353,7 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
 }
 .next-up .label {
   display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--font-display); font-weight: 400;
+  font-family: var(--font-display); font-weight: 800;
   font-size: 15px; letter-spacing: .26em; text-transform: uppercase;
   color: #fff; font-weight: 700; margin-bottom: 12px;
   background: var(--red); padding: 7px 18px 7px 15px; border-radius: 999px;
@@ -378,7 +367,7 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: .35; transform: scale(.7); }
 }
-.next-up .event-name { font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 3.6vw, 40px); line-height: 1.15; }
+.next-up .event-name { font-family: var(--font-display); font-weight: 800; font-size: clamp(26px, 3.6vw, 40px); line-height: 1.15; }
 
 /* archive teaser */
 .archive-card {
@@ -387,7 +376,7 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
   color: var(--washi); padding: clamp(36px, 5vw, 64px);
   display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: space-between;
 }
-.archive-card h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 3.6vw, 40px); margin-bottom: 10px; }
+.archive-card h3 { font-family: var(--font-display); font-weight: 800; font-size: clamp(26px, 3.6vw, 40px); margin-bottom: 10px; }
 .archive-card p { opacity: .85; max-width: 480px; }
 
 /* ---------- sponsorship: ways (no tiers, no prices) ---------- */
@@ -496,7 +485,7 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
 .site-nav a.btn-ticket,
 .btn-ticket {
   display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-display); font-weight: 400;
+  font-family: var(--font-display); font-weight: 800;
   font-size: 13px; letter-spacing: .16em; text-transform: uppercase;
   padding: 10px 20px; border-radius: 999px;
   background: var(--red); color: #fff;
