@@ -1,16 +1,11 @@
 /* ============================================================
-   BRUNSON — Monica's north star display face (Creative Fabrica)
-   Rough cut carries the texture for large type; the clean cut keeps
-   small UI text legible. Subset to Latin and served as woff2.
+   AGHARTI — Monica's north star display face.
+   Condensed cut: heavy enough to carry a headline, narrow enough
+   that it never reads as shouting. Subset to Latin, served as woff2.
    ============================================================ */
 @font-face {
-  font-family: "Brunson Rough";
-  src: url("../assets/fonts/brunson-rough.woff2") format("woff2");
-  font-weight: 400; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: "Brunson";
-  src: url("../assets/fonts/brunson.woff2") format("woff2");
+  font-family: "Agharti";
+  src: url("../assets/fonts/agharti.woff2") format("woff2");
   font-weight: 400; font-style: normal; font-display: swap;
 }
 
@@ -31,8 +26,8 @@
   --sakura: #e9b7c3;
   --red: #b23a2f;
   --white: #ffffff;
-  --font-display: "Brunson Rough", "Zen Old Mincho", serif;
-  --font-ui: "Brunson", "Zen Old Mincho", serif;
+  --font-display: "Agharti", "Zen Old Mincho", serif;
+  --font-ui: "Agharti", "Zen Old Mincho", serif;
   --font-num: "Zen Old Mincho", "Shippori Mincho", serif;
   --font-serif: "Shippori Mincho", serif;
   --font-serif-en: "Cormorant Garamond", "Shippori Mincho", serif;
@@ -544,15 +539,14 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
 .footer-producer img { width: 42px; height: 42px; border-radius: 50%; background: #fff; padding: 4px; object-fit: contain; }
 .footer-producer span { font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; opacity: .75; }
 
-/* ---------- rough vs clean ----------
-   The rough cut eats itself at small sizes, especially knocked out of a
-   solid fill. Keep texture for large display type; use the clean cut for
-   anything small, reversed, or set in caps with wide tracking. */
+/* ---------- where the display face is allowed ----------
+   Agharti is condensed, so its counters close up below about 11px.
+   Badges, buttons and ribbons still carry it; anything smaller than that
+   drops to the body face with wide tracking. */
 .next-up .label,
 .btn, .btn-ticket,
 .date-ribbon,
 .card-cta,
-.cd-label,
 .sp-badge,
 .sip-badge,
 .tier-flag,
