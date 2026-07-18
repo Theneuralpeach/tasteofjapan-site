@@ -1,0 +1,107 @@
+/* ============================================================
+   ABOUT / COMPANY PAGE
+   Same system as the event pages: hairlines, space, one accent.
+   ============================================================ */
+
+body.about-page {
+  --sip-navy: #1b2a4a;
+  --sip-navy-deep: #101c33;
+  --sip-gold: #b98a2f;
+  --sip-gold-soft: #dcbf7c;
+  --sip-washi: #f7f1e3;
+  background: var(--washi);
+}
+
+/* ---------- intro ---------- */
+.about-hero {
+  background: linear-gradient(160deg, #16273f 0%, #0d1526 100%);
+  color: var(--sip-washi);
+  padding: calc(var(--header-h) + 92px) 0 clamp(70px, 9vw, 110px);
+  position: relative; overflow: hidden;
+}
+.about-hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .7;
+  background-image:
+    radial-gradient(1.4px 1.4px at 14% 30%, rgba(220,191,124,.7) 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 78% 22%, rgba(220,191,124,.55) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 62% 74%, rgba(220,191,124,.5) 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 28% 80%, rgba(220,191,124,.5) 50%, transparent 51%);
+}
+.about-hero .container { position: relative; }
+.about-hero .eyebrow { color: var(--sip-gold-soft); }
+.about-hero .eyebrow::before { background: var(--sip-gold-soft); }
+.about-title {
+  font-family: var(--font-serif-en); font-style: italic; font-weight: 600;
+  font-size: clamp(34px, 5.2vw, 62px); line-height: 1.12;
+  color: #fff; margin: 16px 0 22px; max-width: 900px;
+}
+.about-lead { max-width: 660px; font-size: 17px; line-height: 1.8; color: rgba(247,241,227,.86); }
+
+/* ---------- partnership ---------- */
+.partner-section { background: #fff; }
+.partner-section .eyebrow { color: var(--sip-gold); }
+.partner-section .eyebrow::before { background: var(--sip-gold); }
+.partner-section .tier-table { margin-top: 48px; }
+.partner-section .sponsor-close { text-align: center; margin-top: 48px; }
+.partner-section .sponsor-close p {
+  font-family: var(--font-serif-en); font-style: italic; font-size: 19px;
+  margin-bottom: 22px; color: var(--ink-soft);
+}
+
+/* tier table on this page (mirrors the sip page component) */
+.tier-table {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(27,42,74,.28);
+}
+.tier {
+  padding: 38px 34px 34px;
+  border-left: 1px solid rgba(27,42,74,.12);
+  display: flex; flex-direction: column;
+}
+.tier:first-child { border-left: 0; padding-left: 0; }
+.tier:last-child { padding-right: 0; }
+.tier.is-top { border-top: 2px solid var(--sip-gold); margin-top: -1px; }
+.tier-flag {
+  font-family: var(--font-display); font-size: 11px; letter-spacing: .26em;
+  text-transform: uppercase; color: var(--sip-gold); margin-bottom: 12px;
+}
+.tier-name {
+  font-family: var(--font-serif-en); font-style: italic; font-weight: 600;
+  font-size: 25px; line-height: 1.2; color: var(--sip-navy);
+}
+.tier-note {
+  font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
+  opacity: .62; margin: 8px 0 24px;
+}
+.tier-list { display: grid; gap: 11px; font-size: 14.5px; line-height: 1.55; }
+.tier-list li { padding-left: 15px; position: relative; color: #3c4557; }
+.tier-list li::before {
+  content: ""; position: absolute; left: 0; top: .62em;
+  width: 5px; height: 1px; background: var(--sip-gold);
+}
+
+/* ---------- contact ---------- */
+.contact-band { background: var(--washi-deep); }
+.contact-grid {
+  margin-top: 40px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  border-top: 1px solid rgba(27,42,74,.14); padding-top: 34px;
+}
+.contact-label {
+  font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 8px;
+}
+.contact-value { font-family: var(--font-serif-en); font-size: 22px; }
+.contact-value a { border-bottom: 1px solid rgba(27,42,74,.2); }
+.contact-value a:hover { border-bottom-color: var(--gold); }
+
+@media (max-width: 900px) {
+  .tier-table { grid-template-columns: 1fr; border-top: 0; }
+  .tier {
+    border-left: 0; padding: 30px 0 28px;
+    border-top: 1px solid rgba(27,42,74,.12);
+  }
+  .tier:first-child { border-top: 1px solid rgba(27,42,74,.28); }
+  .tier.is-top { border-top-width: 2px; }
+}
