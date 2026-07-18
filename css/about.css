@@ -62,7 +62,7 @@ body.about-page {
 .tier:last-child { padding-right: 0; }
 .tier.is-top { border-top: 2px solid var(--sip-gold); margin-top: -1px; }
 .tier-flag {
-  font-family: var(--font-display); font-weight: 900; font-size: 11px; letter-spacing: .26em;
+  font-family: var(--font-display); font-weight: 400; font-size: 11px; letter-spacing: .26em;
   text-transform: uppercase; color: var(--sip-gold); margin-bottom: 12px;
 }
 .tier-name {
