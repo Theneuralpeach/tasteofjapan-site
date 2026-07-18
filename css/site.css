@@ -439,11 +439,33 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
-/* ---------- june recap video ---------- */
-.recap-head { max-width: 640px; margin-bottom: 34px; }
-.recap-player {
-  border-radius: var(--radius); overflow: hidden;
-  background: #0d1526; box-shadow: var(--shadow);
-  line-height: 0;
+/* ---------- june recap video, inside the hero ---------- */
+.hero-recap { margin-top: 34px; }
+.hero-recap-label {
+  font-size: 11.5px; letter-spacing: .3em; text-transform: uppercase;
+  opacity: .72; margin-bottom: 12px;
 }
-.recap-player video { width: 100%; height: auto; display: block; }
+.hero-recap-player {
+  width: min(560px, 88vw); margin-inline: auto;
+  border-radius: 14px; overflow: hidden; line-height: 0;
+  background: #0d1526;
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: 0 22px 60px rgba(0,0,0,.45);
+}
+.hero-recap-player video { width: 100%; height: auto; display: block; }
+
+/* the hero now carries the recap too: tighten everything so it fits one screen */
+.hero-inner { padding-top: 84px; padding-bottom: 96px; }
+.hero-logo { width: min(500px, 76vw); margin: 2px auto 0; }
+.hero-sub { font-size: clamp(13.5px, 1.5vw, 15.5px); }
+.hero-ctas { margin-top: 22px; }
+.hero .btn { padding: 12px 26px; font-size: 14px; }
+.hero-recap { margin-top: 26px; }
+.hero-recap-player { width: min(430px, 84vw); }
+.scroll-cue { bottom: 34px; }
+.scroll-cue::after { height: 26px; }
+@media (max-width: 700px) {
+  .hero-inner { padding-top: 78px; padding-bottom: 90px; }
+  .hero-recap { margin-top: 22px; }
+  .hero-recap-player { width: 86vw; }
+}
