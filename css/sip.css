@@ -296,3 +296,63 @@ body.sip .btn-ticket:hover { box-shadow: 0 10px 26px rgba(185,138,47,.5); }
   .wk-play { width: 48px; height: 48px; }
   .wk-play::after { border-left-width: 14px; border-top-width: 9px; border-bottom-width: 9px; }
 }
+
+/* ---------- oishii yokocho: vendor lineup ---------- */
+.yokocho-section { background: var(--sip-navy-deep); color: var(--sip-washi); }
+.vendor-grid {
+  margin-top: 48px;
+  display: grid; gap: 12px;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: stretch;
+}
+.v-logo {
+  margin: 0; background: #fff; border-radius: 3px;
+  height: 112px; padding: 12px; display: grid; place-items: center;
+}
+.v-logo img {
+  max-width: 100%; max-height: 88px; width: auto; height: auto; object-fit: contain;
+  transition: transform .3s ease;
+}
+.v-logo:hover img { transform: scale(1.06); }
+
+/* ---------- pouring partners ---------- */
+.pour-features {
+  margin-top: 48px;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(27,42,74,.28);
+}
+.pour { padding: 34px 30px 30px; border-left: 1px solid rgba(27,42,74,.12); }
+.pour:first-child { border-left: 0; padding-left: 0; }
+.pour:last-child { padding-right: 0; }
+.pour h3 {
+  font-family: var(--font-serif-en); font-style: italic; font-weight: 600;
+  font-size: 24px; color: var(--sip-navy); margin-bottom: 12px;
+}
+.pour p { font-size: 14.5px; line-height: 1.75; color: #3c4557; }
+
+.sponsor-logos {
+  margin-top: 54px; padding-top: 40px;
+  border-top: 1px solid rgba(27,42,74,.14);
+  display: grid; gap: 12px;
+  grid-template-columns: repeat(5, 1fr);
+}
+.s-logo { margin: 0; display: grid; place-items: center; }
+.s-logo {
+  background: #fff; border-radius: 3px; padding: 10px 14px;
+  height: 104px; display: grid; place-items: center;
+}
+.s-logo img {
+  max-width: 100%; max-height: 84px; width: auto; height: auto; object-fit: contain;
+  transition: transform .3s ease;
+}
+.s-logo:hover img { transform: scale(1.06); }
+
+@media (max-width: 900px) {
+  .pour-features { grid-template-columns: 1fr; border-top: 0; }
+  .pour { border-left: 0; padding: 26px 0; border-top: 1px solid rgba(27,42,74,.12); }
+  .pour:first-child { border-top: 1px solid rgba(27,42,74,.28); }
+  .vendor-grid { grid-template-columns: repeat(3, 1fr); }
+  .sponsor-logos { grid-template-columns: repeat(3, 1fr); }
+  .v-logo { height: 96px; padding: 12px; }
+  .s-logo { height: 72px; }
+}
