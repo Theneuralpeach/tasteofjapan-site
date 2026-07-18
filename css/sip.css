@@ -170,7 +170,7 @@ body.sip .way:hover { border-color: var(--sip-gold); }
   font-size: 25px; line-height: 1.2;
 }
 .tier-price {
-  font-family: var(--font-display); font-weight: 400; font-size: 58px; line-height: 1;
+  font-family: var(--font-num); font-weight: 900; font-size: 58px; line-height: 1;
   margin: 16px 0 6px; font-variant-numeric: tabular-nums;
 }
 .tier-price span { font-size: .42em; vertical-align: 22%; margin-right: 2px; opacity: .7; }
