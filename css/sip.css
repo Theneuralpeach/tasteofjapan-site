@@ -375,3 +375,10 @@ body.sip .btn-ticket:hover { box-shadow: 0 10px 26px rgba(185,138,47,.5); }
   padding: 9px 20px; font-size: 14.5px; color: var(--sip-washi);
 }
 .wk-list-more { margin-top: 14px; font-size: 13px; opacity: .6; }
+
+/* a confirmed sponsor whose logo file we do not have yet */
+.s-logo-text { display: grid; place-items: center; }
+.s-logo-text span {
+  font-family: var(--font-serif-en); font-size: 22px; font-weight: 600;
+  letter-spacing: .06em; color: var(--sip-navy);
+}
