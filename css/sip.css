@@ -356,3 +356,16 @@ body.sip .btn-ticket:hover { box-shadow: 0 10px 26px rgba(185,138,47,.5); }
   .v-logo { height: 96px; padding: 12px; }
   .s-logo { height: 72px; }
 }
+
+/* ---------- workshops on the day ---------- */
+.wk-list { margin-top: 40px; padding-top: 28px; border-top: 1px solid rgba(220,191,124,.3); }
+.wk-list-label {
+  font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--gold-soft); margin-bottom: 16px;
+}
+.wk-list ul { display: flex; flex-wrap: wrap; gap: 10px; }
+.wk-list li {
+  border: 1px solid rgba(220,191,124,.4); border-radius: 999px;
+  padding: 9px 20px; font-size: 14.5px; color: var(--sip-washi);
+}
+.wk-list-more { margin-top: 14px; font-size: 13px; opacity: .6; }
