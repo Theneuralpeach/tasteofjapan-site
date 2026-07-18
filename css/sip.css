@@ -299,27 +299,29 @@ body.sip .btn-ticket:hover { box-shadow: 0 10px 26px rgba(185,138,47,.5); }
 
 /* ---------- oishii yokocho: confirmed lineup ---------- */
 .yokocho-section { background: var(--sip-navy-deep); color: var(--sip-washi); }
-.vendor-list {
+.vendor-cards {
   margin-top: 46px;
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(220,191,124,.34);
+  display: grid; gap: 12px;
+  grid-template-columns: repeat(5, 1fr);
 }
-.vendor-list li {
-  padding: 22px 26px 20px;
-  border-bottom: 1px solid rgba(220,191,124,.14);
-  border-left: 1px solid rgba(220,191,124,.14);
-  display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+.v-card {
+  margin: 0; background: #fff; border-radius: 3px;
+  height: 116px; padding: 14px;
+  display: grid; place-items: center; gap: 4px;
+  position: relative;
 }
-.vendor-list li:nth-child(3n+1) { border-left: 0; padding-left: 0; }
-.v-name { font-family: var(--font-serif-en); font-size: 22px; font-weight: 600; }
-.v-note {
-  font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--sip-gold-soft); opacity: .85;
+.v-card img { max-width: 100%; max-height: 78px; width: auto; height: auto; object-fit: contain; }
+.v-wordmark {
+  font-family: var(--font-serif-en); font-size: 19px; font-weight: 600;
+  color: var(--sip-navy); text-align: center; line-height: 1.25;
 }
-@media (max-width: 820px) {
-  .vendor-list { grid-template-columns: 1fr; }
-  .vendor-list li { border-left: 0; padding-left: 0; }
+.v-card figcaption {
+  position: absolute; bottom: 8px; left: 0; right: 0;
+  font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase;
+  color: #8a93a5; text-align: center;
 }
+@media (max-width: 900px) { .vendor-cards { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 520px) { .vendor-cards { grid-template-columns: repeat(2, 1fr); } .v-card { height: 98px; } }
 
 /* ---------- pouring partners ---------- */
 .pour-features {
@@ -382,3 +384,10 @@ body.sip .btn-ticket:hover { box-shadow: 0 10px 26px rgba(185,138,47,.5); }
   font-family: var(--font-serif-en); font-size: 22px; font-weight: 600;
   letter-spacing: .06em; color: var(--sip-navy);
 }
+
+/* ---------- experience pillars now lead with a photograph ---------- */
+.sip-pillar { padding: 0 0 28px; overflow: hidden; text-align: center; }
+.pillar-photo { margin: 0 0 20px; aspect-ratio: 4 / 3; overflow: hidden; background: #0f1c33; }
+.pillar-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.22,.61,.36,1); }
+.sip-pillar:hover .pillar-photo img { transform: scale(1.05); }
+.sip-pillar h3, .sip-pillar .jp, .sip-pillar p { padding-inline: 20px; }
