@@ -557,3 +557,10 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
 .tier-note,
 .noren-mark .word,
 .brand { font-family: var(--font-ui); }
+
+/* official Taste of Japan lockup in the footer, used whole on its own white card */
+.footer-logo {
+  display: block; width: 190px; height: auto;
+  border-radius: 6px; margin-bottom: 18px;
+}
+@media (max-width: 640px) { .footer-logo { width: 160px; } }
