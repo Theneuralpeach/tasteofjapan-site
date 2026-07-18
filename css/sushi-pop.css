@@ -229,3 +229,16 @@ body.sushi-pop .way:hover { border-color: var(--sp-pink); }
 
 /* lineup section sits on dark navy — lift the body copy for contrast */
 .sp-lineup .section-lead { color: rgba(243, 234, 216, .82); }
+
+/* brush lettering hero logo */
+.sp-hero-logo {
+  width: min(800px, 88vw); height: auto; display: block; margin: 20px auto 10px;
+  filter: drop-shadow(0 14px 46px rgba(0,0,0,.45));
+}
+
+/* the swash was sized for the old text title; soften it behind the brush logo */
+.sp-hero .swash {
+  width: min(1000px, 96vw); height: clamp(150px, 30vw, 300px);
+  transform: translate(-50%, -58%) rotate(-2.4deg);
+  opacity: .5; filter: blur(18px);
+}
