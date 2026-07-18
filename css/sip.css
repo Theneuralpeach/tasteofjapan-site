@@ -324,7 +324,7 @@ body.sip .btn-ticket:hover { box-shadow: 0 10px 26px rgba(185,138,47,.5); }
 /* ---------- pouring partners ---------- */
 .pour-features {
   margin-top: 48px;
-  display: grid; grid-template-columns: repeat(3, 1fr);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   border-top: 1px solid rgba(27,42,74,.28);
 }
 .pour { padding: 34px 30px 30px; border-left: 1px solid rgba(27,42,74,.12); }
