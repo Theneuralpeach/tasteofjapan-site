@@ -247,3 +247,10 @@ body.sip .way:hover { border-color: var(--sip-gold); }
   color: var(--gold-soft); margin-bottom: 5px;
 }
 .workshop-credits dd { font-family: var(--font-serif-en); font-size: 20px; color: #fff; }
+
+/* ticket button carries the sip gold */
+body.sip .btn-ticket {
+  background: linear-gradient(120deg, var(--sip-gold-soft), var(--sip-gold));
+  color: #221a08; box-shadow: 0 6px 20px rgba(185,138,47,.4);
+}
+body.sip .btn-ticket:hover { box-shadow: 0 10px 26px rgba(185,138,47,.5); }

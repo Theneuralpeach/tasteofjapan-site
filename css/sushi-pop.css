@@ -242,3 +242,10 @@ body.sushi-pop .way:hover { border-color: var(--sp-pink); }
   transform: translate(-50%, -58%) rotate(-2.4deg);
   opacity: .5; filter: blur(18px);
 }
+
+/* ticket button carries the sushi pop pink */
+body.sushi-pop .btn-ticket {
+  background: var(--sp-pink); color: #fff;
+  box-shadow: 0 6px 20px rgba(232,56,109,.42);
+}
+body.sushi-pop .btn-ticket:hover { background: var(--sp-pink-hot); box-shadow: 0 10px 26px rgba(232,56,109,.5); }
