@@ -496,6 +496,9 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
 }
 
 /* ---------- persistent ticket button in the header ---------- */
+/* .site-nav a sets its own padding and outranks a lone class, so the ticket
+   button has to be qualified or it loses its side padding and the pill collapses */
+.site-nav a.btn-ticket,
 .btn-ticket {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-display); font-weight: 400;
