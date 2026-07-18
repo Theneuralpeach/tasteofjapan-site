@@ -60,9 +60,27 @@ body.sip .eyebrow::before { background: var(--sip-gold); }
 }
 .sip-title .of { font-size: .55em; color: var(--sip-gold-soft); }
 .sip-sub-jp { font-family: var(--font-serif); font-size: clamp(15px, 2vw, 19px); letter-spacing: .3em; padding-left: .3em; opacity: .9; }
-.sip-meta { margin-top: 30px; display: flex; gap: 14px 30px; justify-content: center; flex-wrap: wrap; font-size: 14px; letter-spacing: .14em; }
-.sip-meta span { display: inline-flex; align-items: center; gap: 9px; }
-.sip-meta .diamond { color: var(--sip-gold-soft); font-size: 9px; }
+/* date is the single most important fact on an event page: give it the weight */
+.sip-when { margin-top: 30px; }
+.sip-date {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.1vw, 34px);
+  letter-spacing: .05em; line-height: 1.15;
+  color: var(--sip-washi);
+}
+.sip-venue-line {
+  font-family: var(--font-serif-en); font-style: italic;
+  font-size: clamp(16px, 2vw, 21px);
+  color: var(--sip-gold-soft); margin-top: 8px;
+}
+.sip-badge {
+  display: inline-block; margin-top: 18px;
+  font-family: var(--font-display);
+  font-size: 12.5px; letter-spacing: .2em; text-transform: uppercase;
+  color: #221a08; background: linear-gradient(120deg, var(--sip-gold-soft), var(--sip-gold));
+  padding: 9px 22px; border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(185,138,47,.35);
+}
 .sip-hero .countdown { justify-content: center; margin-top: 34px; }
 .sip-hero .cd-num { color: var(--sip-washi); }
 .sip-hero-ctas { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
