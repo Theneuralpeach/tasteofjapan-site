@@ -461,9 +461,16 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
 .hero-ctas { margin-top: 22px; }
 .hero .btn { padding: 12px 26px; font-size: 14px; }
 .hero-recap { margin-top: 26px; }
-.hero-recap-player { width: min(430px, 84vw); }
-.scroll-cue { bottom: 34px; }
-.scroll-cue::after { height: 26px; }
+.hero-recap-player { width: min(390px, 82vw); }
+/* the wave was 169px tall and swallowed the scroll cue: cap it and start it lower */
+.hero-wave { height: clamp(52px, 6.5vw, 88px); }
+/* cue now sits in the flow under the video; padding reserves the wave's band */
+.hero-inner { padding-bottom: clamp(92px, 8vw, 124px); }
+.hero .scroll-cue {
+  position: static; transform: none; left: auto; bottom: auto;
+  margin-top: 22px;
+}
+.scroll-cue::after { height: 20px; margin-top: 8px; }
 @media (max-width: 700px) {
   .hero-inner { padding-top: 78px; padding-bottom: 90px; }
   .hero-recap { margin-top: 22px; }
