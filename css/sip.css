@@ -103,32 +103,6 @@ body.sip .eyebrow::before { background: var(--sip-gold); }
 }
 .ala-item b { color: var(--sip-gold-soft); font-weight: 700; }
 
-/* ---------- yokocho noren strip ---------- */
-.yokocho { overflow: hidden; }
-.yokocho-scroll {
-  display: flex; gap: 18px; margin-top: 46px;
-  overflow-x: auto; padding: 10px 4px 26px;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-.yokocho-scroll::-webkit-scrollbar { height: 6px; }
-.yokocho-scroll::-webkit-scrollbar-thumb { background: rgba(185,138,47,.5); border-radius: 3px; }
-.noren-stall {
-  flex: 0 0 220px; scroll-snap-align: start;
-  border-radius: 14px 14px 18px 18px; overflow: hidden;
-  background: linear-gradient(180deg, #1c3a5e, #14314c);
-  color: var(--sip-washi); text-align: center;
-  padding: 34px 18px 26px; position: relative;
-  transition: transform .3s;
-}
-.noren-stall:hover { transform: translateY(-6px); }
-.noren-stall::before {
-  content: ""; position: absolute; inset: 0 0 auto 0; height: 12px;
-  background: repeating-linear-gradient(90deg, var(--sip-gold) 0 26px, #fffdf7 26px 52px);
-}
-.noren-stall .kanji { font-family: var(--font-serif); font-size: 54px; font-weight: 700; color: var(--sip-gold-soft); }
-.noren-stall .en { margin-top: 10px; font-size: 12.5px; letter-spacing: .18em; text-transform: uppercase; opacity: .8; }
-
 /* ---------- venue band ---------- */
 .sip-venue {
   background: linear-gradient(120deg, var(--sip-navy), var(--sip-navy-deep));
@@ -254,3 +228,6 @@ body.sip .btn-ticket {
   color: #221a08; box-shadow: 0 6px 20px rgba(185,138,47,.4);
 }
 body.sip .btn-ticket:hover { box-shadow: 0 10px 26px rgba(185,138,47,.5); }
+
+/* fineprint sits under the centered CTA, so centre it too */
+.pass-fineprint { margin-top: 20px; text-align: center; font-size: 12px; opacity: .5; }
