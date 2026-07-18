@@ -438,3 +438,12 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
+
+/* ---------- june recap video ---------- */
+.recap-head { max-width: 640px; margin-bottom: 34px; }
+.recap-player {
+  border-radius: var(--radius); overflow: hidden;
+  background: #0d1526; box-shadow: var(--shadow);
+  line-height: 0;
+}
+.recap-player video { width: 100%; height: auto; display: block; }
