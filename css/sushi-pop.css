@@ -126,7 +126,9 @@ body.sushi-pop {
 .sp-feature .big { font-family: var(--font-brush); font-size: 15px; color: var(--sp-pink); display: block; margin-top: 10px; }
 
 /* ---------- flyer showcase ---------- */
-.sp-showcase { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(30px, 5vw, 70px); align-items: center; }
+/* Single column while the flyer is pulled. Restore the two-column rule
+   (1.05fr .95fr) when a corrected flyer goes back in. */
+.sp-showcase { display: grid; grid-template-columns: 1fr; gap: clamp(30px, 5vw, 70px); align-items: center; max-width: 640px; }
 .sp-showcase .flyer-frame {
   transform: rotate(-2.2deg);
   border: 10px solid #fff; border-radius: 10px;

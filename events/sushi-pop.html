@@ -3,10 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* Mark that JS is live, and recover the page if site.js never arrives. */
+(function () {
+  var d = document.documentElement;
+  d.className += " js";
+  setTimeout(function () {
+    if (!d.classList.contains("site-ready")) d.classList.add("recovered");
+  }, 3000);
+})();
+</script>
 <title>Sushi Pop · Aug 16, 2026 · Little Tokyo | Taste of Japan</title>
-<meta name="description" content="Nisei Week Special: Sushi Pop. All you can eat bluefin tuna, sake and drinks, live music and DJ, cultural performances. Sunday, August 16, 2026 at JACCC, Little Tokyo, Los Angeles.">
+<meta name="description" content="Nisei Week Special: Sushi Pop. Sushi and city pop in Little Tokyo. Sunday, August 16, 2026 at the JACCC, Little Tokyo, Los Angeles.">
 <meta property="og:title" content="Sushi Pop · Sunday, Aug 16, 2026 · Little Tokyo">
-<meta property="og:description" content="All you can eat. All you can enjoy. Bluefin tuna AYCE, sake & drinks, live music & DJ, cultural performances.">
+<meta property="og:description" content="A Nisei Week special in Little Tokyo. Sushi and city pop, Sunday August 16.">
 <meta property="og:image" content="https://theneuralpeach.github.io/tasteofjapan-site/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -17,8 +27,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Zen+Old+Mincho:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Permanent+Marker&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/site.css?v=ac9c0dcb">
-<link rel="stylesheet" href="../css/sushi-pop.css?v=20f50081">
+<link rel="stylesheet" href="../css/site.css?v=8499d69c">
+<link rel="stylesheet" href="../css/sushi-pop.css?v=bc5c55b3">
+<link rel="alternate" hreflang="en" href="https://theneuralpeach.github.io/tasteofjapan-site/events/sushi-pop.html">
+<link rel="alternate" hreflang="ja" href="https://theneuralpeach.github.io/tasteofjapan-site/events/sushi-pop.html?lang=ja">
+<link rel="alternate" hreflang="x-default" href="https://theneuralpeach.github.io/tasteofjapan-site/events/sushi-pop.html">
 <link rel="icon" type="image/png" href="../assets/img/tanoshii-mark.png">
 <script type="application/ld+json">
 {
@@ -33,7 +46,7 @@
     "address": "244 S. San Pedro St., Los Angeles, CA 90012"
   },
   "organizer": { "@type": "Organization", "name": "Tanoshii Project Inc." },
-  "description": "A Japanese food and culture experience. All you can eat bluefin tuna, sake and drinks, live music and DJ, cultural performances."
+  "description": "A Nisei Week special in Little Tokyo. Sushi and city pop, Sunday August 16, 2026."
 }
 </script>
 </head>
@@ -66,8 +79,8 @@
       <img class="sp-hero-logo" src="../assets/img/logo-sushi-pop.png" alt="Sushi Pop">
       <span class="sr-only">Sushi Pop</span>
     </h1>
-    <p class="sp-tagline reveal" data-delay="2">
-      All you can <span class="eat">eat</span>. All you can <span class="enjoy">enjoy</span>.
+    <p class="sp-tagline reveal" data-delay="2" data-ja="<span class=&quot;eat&quot;>寿司</span>と<span class=&quot;enjoy&quot;>シティポップ</span>の一日。">
+      <span class="eat">Sushi</span> and <span class="enjoy">city pop</span>, for one day.
     </p>
     <div class="sp-meta-chips reveal" data-delay="2">
       <span class="sp-chip" data-ja="8月16日（日）2026年">Sunday, August 16, 2026</span>
@@ -81,7 +94,7 @@
       <div class="cd-cell"><div class="cd-num" data-cd="secs">0</div><div class="cd-label" data-ja="秒">Sec</div></div>
     </div>
     <div class="sp-hero-ctas reveal" data-delay="3">
-      <a class="btn sp-cta" href="#tickets" data-fireworks="pink" data-ja="チケットを見る">Get tickets</a>
+      <a class="btn sp-cta" href="#tickets" data-fireworks="pink" data-ja="発売の通知を受け取る">Get notified</a>
       <a class="btn outline" style="color:#fff;" href="https://www.instagram.com/tasteofjpn/" target="_blank" rel="noopener" data-ja="最新情報をフォロー">Follow for updates</a>
     </div>
   </div>
@@ -90,8 +103,8 @@
 <!-- marquee -->
 <div class="sp-marquee marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Bluefin tuna all you can eat <span class="dot">✦</span> Sake &amp; drinks <span class="dot">✦</span> Live music &amp; DJ <span class="dot">✦</span> Cultural performances <span class="dot">✦</span> All you can eat <span class="dot">✦</span> All you can enjoy <span class="dot">✦</span>&nbsp;</span>
-    <span>Bluefin tuna all you can eat <span class="dot">✦</span> Sake &amp; drinks <span class="dot">✦</span> Live music &amp; DJ <span class="dot">✦</span> Cultural performances <span class="dot">✦</span> All you can eat <span class="dot">✦</span> All you can enjoy <span class="dot">✦</span>&nbsp;</span>
+    <span>Sushi Pop <span class="dot">✦</span> City pop <span class="dot">✦</span> Nisei Week special <span class="dot">✦</span> Little Tokyo <span class="dot">✦</span> August 16 <span class="dot">✦</span>&nbsp;</span>
+    <span>Sushi Pop <span class="dot">✦</span> City pop <span class="dot">✦</span> Nisei Week special <span class="dot">✦</span> Little Tokyo <span class="dot">✦</span> August 16 <span class="dot">✦</span>&nbsp;</span>
   </div>
 </div>
 
@@ -103,27 +116,22 @@
     <div class="sp-features">
       <div class="sp-feature reveal">
         <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 32c8-10 20-16 34-14 6 1 12 4 16 8-4 4-10 7-16 8-14 2-26-4-34-2z"/><path d="M52 26l8-7-3 10 3 10-8-7"/><circle cx="22" cy="28" r="1.8" fill="currentColor"/></svg>
-        <h3 data-ja="本マグロ食べ放題">Bluefin tuna AYCE</h3>
-        <p data-ja="主役は本マグロ。心ゆくまで。">The star of the day. As much as you want.</p>
+        <!-- Lineup is not locked yet: this card must not promise a specific dish or format. -->
+        <h3 data-ja="主役は寿司">Sushi at the center</h3>
+        <p data-ja="出店ラインナップは近日発表。">Vendor lineup announced soon.</p>
         <span class="big">The headliner!</span>
       </div>
       <div class="sp-feature reveal" data-delay="1">
-        <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M26 8h12l-2 10c6 2 9 7 9 13v18a5 5 0 0 1-5 5H24a5 5 0 0 1-5-5V31c0-6 3-11 9-13z"/><path d="M19 36h26"/><circle cx="48" cy="52" r="7"/><path d="M44 52c1-2 7-2 8 0"/></svg>
-        <h3 data-ja="日本酒＆ドリンク">Sake &amp; drinks</h3>
-        <p data-ja="日本の酒とドリンクが勢ぞろい。">Japanese sake and drinks, poured all day.</p>
-        <span class="big">Kanpai!</span>
-      </div>
-      <div class="sp-feature reveal" data-delay="2">
         <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="30" cy="34" r="20"/><circle cx="30" cy="34" r="7"/><circle cx="30" cy="34" r="1.6" fill="currentColor"/><path d="M50 14l6-6M53 24l8-3"/></svg>
-        <h3 data-ja="ライブ＆DJ">Live music &amp; DJ</h3>
-        <p data-ja="音楽が一日を回し続けます。">The soundtrack keeps the day spinning.</p>
+        <h3 data-ja="シティポップ">City pop</h3>
+        <p data-ja="一日を回し続ける音。">The sound the day runs on.</p>
         <span class="big">On the decks</span>
       </div>
-      <div class="sp-feature reveal" data-delay="3">
+      <div class="sp-feature reveal" data-delay="2">
         <svg class="icon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 50L44 12c3-3 8-3 10 0s2 7 0 10L22 54c-2 2-8 2-10-1s-2-8 0-3z"/><path d="M12 50l-4 6 6-4M24 38l8 8"/></svg>
-        <h3 data-ja="文化パフォーマンス">Cultural performances</h3>
-        <p data-ja="日本の伝統パフォーマンスをステージで。">Japanese tradition, live on stage.</p>
-        <span class="big">On stage</span>
+        <h3 data-ja="二世週の特別イベント">A Nisei Week special</h3>
+        <p data-ja="会場はリトル東京の JACCC。">Little Tokyo, at the JACCC.</p>
+        <span class="big">Aug 16</span>
       </div>
     </div>
   </div>
@@ -132,17 +140,18 @@
 <!-- flyer showcase -->
 <section class="section" style="padding-top: 20px;">
   <div class="container sp-showcase">
-    <div class="flyer-frame reveal" data-tilt="5">
-      <img src="../assets/img/sushi-pop-flyer.jpg" alt="Sushi Pop official flyer">
-    </div>
+    <!-- The official flyer was removed on 2026-07-19: the artwork still shows
+         "all you can eat", the four unconfirmed features, and misspells Nisei
+         Week as "NISSEI WEEK". Restore the .flyer-frame block from git history
+         once a corrected flyer exists. -->
     <div>
       <p class="eyebrow reveal" data-ja="どんな日？">What kind of day is it</p>
       <h2 class="section-title reveal" data-delay="1" data-ja="リトル東京が、<br>寿司でポップに染まる">Little Tokyo goes<br>full sushi pop</h2>
       <ul class="sp-list reveal" data-delay="2">
         <li data-ja="日系ウィークのスペシャルイベントとして開催">A Nisei Week special event</li>
-        <li data-ja="本マグロ食べ放題が主役">Bluefin tuna all you can eat at the center</li>
-        <li data-ja="日本酒・ドリンク・ライブ・DJ・文化パフォーマンス">Sake, drinks, live music, DJ, cultural performances</li>
-        <li data-ja="会場はリトル東京の中心、JACCC">Held at JACCC, the heart of Little Tokyo</li>
+        <li data-ja="主役は寿司">Sushi at the center of the day</li>
+        <li data-ja="音はシティポップ">City pop on the speakers</li>
+        <li data-ja="会場はリトル東京の JACCC">Held at the JACCC in Little Tokyo</li>
       </ul>
     </div>
   </div>
@@ -151,9 +160,9 @@
 <!-- live music & dj announcement -->
 <section class="section sp-lineup">
   <div class="container" style="position: relative; text-align: center;">
-    <p class="eyebrow reveal" style="justify-content: center;" data-ja="ライブ＆DJ">Live music &amp; DJ</p>
+    <p class="eyebrow reveal" style="justify-content: center;" data-ja="シティポップ">City pop</p>
     <h2 class="section-title reveal" data-delay="1" data-ja="出演者は近日発表します">Performers announced soon</h2>
-    <p class="section-lead reveal" data-delay="2" style="margin-inline: auto;" data-ja="当日ステージに立つアーティストとDJが決まり次第、このページと Instagram でお知らせします。">
+    <p class="section-lead reveal" data-delay="2" style="margin-inline: auto;" data-ja="当日プレイするアーティストが決まり次第、このページと Instagram でお知らせします。">
       We will announce who is playing on the day, here and on Instagram, as soon as it is confirmed.
     </p>
     <div style="margin-top: 34px;" class="reveal" data-delay="3">
@@ -193,27 +202,12 @@
 <section class="section sp-tickets" id="tickets">
   <div class="container">
     <p class="eyebrow reveal" style="justify-content:center;" data-ja="チケット">Tickets</p>
-    <h2 class="sp-title2 reveal" data-delay="1" data-ja="チケット">Get your ticket</h2>
-    <div class="sp-tiers reveal" data-delay="2">
-      <div class="sp-tier featured">
-        <div class="tier-name">VIP</div>
-        <div class="tier-price"><sup>$</sup>100</div>
-      </div>
-      <div class="sp-tier">
-        <div class="tier-name" data-ja="一般">General</div>
-        <div class="tier-price"><sup>$</sup>75</div>
-      </div>
-      <div class="sp-tier">
-        <div class="tier-name" data-ja="シニア">Senior</div>
-        <div class="tier-price"><sup>$</sup>64</div>
-      </div>
-      <div class="sp-tier">
-        <div class="tier-name" data-ja="子ども">Child</div>
-        <div class="tier-price"><sup>$</sup>55</div>
-      </div>
-    </div>
-    <p class="reveal" data-delay="2" data-ja="販売開始は @tasteofjpn で最初にお知らせします。">
-      Sales open soon. The announcement lands first on @tasteofjpn.
+    <h2 class="sp-title2 reveal" data-delay="1" data-ja="チケットは近日発売">Tickets go on sale soon</h2>
+    <!-- Tiers and prices were removed: nothing is on sale and the lineup is not
+         locked, so the page must not quote a price. Restore the .sp-tiers block
+         from git history once both are confirmed. -->
+    <p class="reveal" data-delay="2" data-ja="価格と販売開始日は決まり次第、@tasteofjpn で最初にお知らせします。">
+      Prices and the on-sale date land first on @tasteofjpn.
     </p>
     <!-- TODO: swap href for the Sushi Pop ticket URL when it exists (the JotForm 261844515991163 is Sip of Japan's) -->
     <div style="margin-top: 34px;" class="reveal" data-delay="3">
@@ -283,6 +277,6 @@
   </div>
 </footer>
 
-<script src="../js/site.js?v=f6b8ecf0"></script>
+<script src="../js/site.js?v=fffb9bc2"></script>
 </body>
 </html>

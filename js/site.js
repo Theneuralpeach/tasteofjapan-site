@@ -4,6 +4,9 @@
 (function () {
   "use strict";
 
+  /* Tell the head failsafe this script arrived, so it stands down. */
+  document.documentElement.classList.add("site-ready");
+
   /* ---------- noren opening (EVERY visit) + celebration fireworks ---------- */
   const noren = document.querySelector(".noren");
   if (noren) {
@@ -27,8 +30,28 @@
 
   /* ---------- EN / JP toggle ----------
      Any element with a data-ja attribute is translatable.
-     English source is captured into data-en on first switch. */
+     English source is captured into data-en on first switch.
+
+     The language lives in the URL (?lang=ja) so a link shared on LINE or in a
+     message opens in the language the sender was reading. Order of authority:
+     the URL wins, then the visitor's last choice, then their browser. */
   const langBtn = document.querySelector(".lang-toggle");
+
+  const readLang = () => {
+    const fromUrl = new URLSearchParams(location.search).get("lang");
+    if (fromUrl === "ja" || fromUrl === "en") return fromUrl;
+    const saved = localStorage.getItem("tojLang");
+    if (saved === "ja" || saved === "en") return saved;
+    return navigator.language && navigator.language.toLowerCase().startsWith("ja") ? "ja" : "en";
+  };
+
+  const writeLangToUrl = (lang) => {
+    const url = new URL(location.href);
+    if (lang === "ja") url.searchParams.set("lang", "ja");
+    else url.searchParams.delete("lang");
+    history.replaceState(null, "", url);
+  };
+
   const applyLang = (lang) => {
     document.documentElement.lang = lang === "ja" ? "ja" : "en";
     document.querySelectorAll("[data-ja]").forEach((el) => {
@@ -37,14 +60,79 @@
     });
     if (langBtn) langBtn.textContent = lang === "ja" ? "EN" : "日本語";
     localStorage.setItem("tojLang", lang);
+    writeLangToUrl(lang);
   };
-  if (langBtn) {
-    langBtn.addEventListener("click", () => {
-      const next = (localStorage.getItem("tojLang") || "en") === "en" ? "ja" : "en";
-      applyLang(next);
+
+  /* Carry the language across internal links, so the JP reader stays in JP.
+     Edits the href string in place: rebuilding it from a URL object would
+     flatten the relative paths that events/ pages rely on. */
+  const carryLang = (lang) => {
+    document.querySelectorAll("a[href]").forEach((a) => {
+      const href = a.getAttribute("href");
+      if (!href || /^(https?:|mailto:|tel:|#)/i.test(href)) return;
+      const hashAt = href.indexOf("#");
+      const hash = hashAt === -1 ? "" : href.slice(hashAt);
+      let path = hashAt === -1 ? href : href.slice(0, hashAt);
+      path = path.replace(/([?&])lang=(ja|en)(&|$)/, "$1").replace(/[?&]$/, "");
+      if (lang === "ja") path += (path.includes("?") ? "&" : "?") + "lang=ja";
+      a.setAttribute("href", path + hash);
     });
-    if ((localStorage.getItem("tojLang") || "en") === "ja") applyLang("ja");
+  };
+
+  if (langBtn) {
+    const initial = readLang();
+    if (initial === "ja") applyLang("ja");
+    else writeLangToUrl("en");
+    carryLang(initial);
+
+    langBtn.addEventListener("click", () => {
+      const next = document.documentElement.lang === "ja" ? "en" : "ja";
+      applyLang(next);
+      carryLang(next);
+    });
   }
+
+  /* ---------- recap video ----------
+     Autoplay has to be muted, so the hero runs a silent lightweight loop.
+     Asking for sound swaps in the full-quality file at the same timestamp. */
+  document.querySelectorAll("[data-recap]").forEach((wrap) => {
+    const video = wrap.querySelector("video");
+    const soundBtn = wrap.querySelector(".recap-sound");
+    if (!video) return;
+
+    /* Anyone who asked their OS for less motion gets a still with controls. */
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      video.removeAttribute("autoplay");
+      video.autoplay = false;
+      video.loop = false;
+      video.controls = true;
+      video.pause();
+      if (soundBtn) soundBtn.hidden = true;
+      return;
+    }
+
+    /* Safari and iOS can still refuse; show controls rather than a dead frame. */
+    const played = video.play();
+    if (played && typeof played.catch === "function") {
+      played.catch(() => { video.controls = true; });
+    }
+
+    if (soundBtn) {
+      soundBtn.addEventListener("click", () => {
+        const at = video.currentTime;
+        video.src = wrap.dataset.full;
+        video.muted = false;
+        video.loop = false;
+        video.controls = true;
+        video.addEventListener("loadedmetadata", () => {
+          if (at < video.duration) video.currentTime = at;
+          video.play();
+        }, { once: true });
+        video.load();
+        soundBtn.hidden = true;
+      });
+    }
+  });
 
   /* ---------- countdown ----------
      <div class="countdown" data-target="2026-08-16T11:00:00-07:00"> */

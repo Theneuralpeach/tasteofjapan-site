@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* Mark that JS is live, and recover the page if site.js never arrives. */
+(function () {
+  var d = document.documentElement;
+  d.className += " js";
+  setTimeout(function () {
+    if (!d.classList.contains("site-ready")) d.classList.add("recovered");
+  }, 3000);
+})();
+</script>
 <title>About · Taste of Japan</title>
 <meta name="description" content="Taste of Japan is produced by Tanoshii Project Inc., creating Japanese food and culture festivals across Southern California. Partnership and sponsorship enquiries welcome.">
 <meta property="og:title" content="About Taste of Japan">
@@ -17,8 +27,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Zen+Old+Mincho:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Permanent+Marker&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=ac9c0dcb">
+<link rel="stylesheet" href="css/site.css?v=8499d69c">
 <link rel="stylesheet" href="css/about.css?v=894de7b3">
+<link rel="alternate" hreflang="en" href="https://theneuralpeach.github.io/tasteofjapan-site/about.html">
+<link rel="alternate" hreflang="ja" href="https://theneuralpeach.github.io/tasteofjapan-site/about.html?lang=ja">
+<link rel="alternate" hreflang="x-default" href="https://theneuralpeach.github.io/tasteofjapan-site/about.html">
 <link rel="icon" type="image/png" href="assets/img/tanoshii-mark.png">
 </head>
 <body class="about-page dark-header">
@@ -201,6 +214,6 @@
   </div>
 </footer>
 
-<script src="js/site.js?v=f6b8ecf0"></script>
+<script src="js/site.js?v=fffb9bc2"></script>
 </body>
 </html>

@@ -3,10 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* Mark that JS is live, and recover the page if site.js never arrives. */
+(function () {
+  var d = document.documentElement;
+  d.className += " js";
+  setTimeout(function () {
+    if (!d.classList.contains("site-ready")) d.classList.add("recovered");
+  }, 3000);
+})();
+</script>
 <title>Taste of Japan · Japanese Food & Culture Festivals</title>
 <meta name="description" content="Taste of Japan brings Japanese food and culture festivals to Southern California. Presented by Tanoshii Project Inc.">
 <meta property="og:title" content="Taste of Japan">
-<meta property="og:description" content="Japanese food & culture festivals in Southern California. Two festivals this summer: Sushi Pop (Aug 16) and Sip of Japan (Aug 30).">
+<meta property="og:description" content="Japanese food & culture in Southern California. Two events this August: Sushi Pop (Aug 16) and Sip of Japan (Aug 30).">
 <meta property="og:image" content="https://theneuralpeach.github.io/tasteofjapan-site/assets/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -17,7 +27,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Zen+Old+Mincho:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Permanent+Marker&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=ac9c0dcb">
+<link rel="stylesheet" href="css/site.css?v=8499d69c">
+<link rel="alternate" hreflang="en" href="https://theneuralpeach.github.io/tasteofjapan-site/">
+<link rel="alternate" hreflang="ja" href="https://theneuralpeach.github.io/tasteofjapan-site/?lang=ja">
+<link rel="alternate" hreflang="x-default" href="https://theneuralpeach.github.io/tasteofjapan-site/">
 <link rel="icon" type="image/png" href="assets/img/tanoshii-mark.png">
 </head>
 <body data-sky-auto>
@@ -65,8 +78,8 @@
       <img class="hero-logo" src="assets/img/logo-taste-of-japan.png" alt="Taste of Japan">
       <span class="sr-only">Taste of Japan</span>
     </h1>
-    <p class="hero-sub reveal" data-delay="2" data-ja="南カリフォルニアで開催される、日本の食と文化のフェスティバル。この夏、2つの祭りが待っています。">
-      Festival experiences across Southern California.<br>Two festivals are waiting for you this summer.
+    <p class="hero-sub reveal" data-delay="2" data-ja="南カリフォルニアで開催される、日本の食と文化の体験。この8月、2つのイベントが待っています。">
+      Japanese food and culture across Southern California.<br>Two events are waiting for you this August.
     </p>
     <div class="hero-ctas reveal" data-delay="3">
       <a class="btn" href="#events" data-ja="イベントを見る">See the events</a>
@@ -75,11 +88,14 @@
 
     <div class="hero-recap reveal" data-delay="3">
       <p class="hero-recap-label" data-ja="2026年6月 · アナハイム">June 2026 · Anaheim</p>
-      <div class="hero-recap-player">
-        <video controls playsinline preload="metadata" poster="assets/video/toj-2026-recap-poster.jpg">
-          <source src="assets/video/toj-2026-recap.mp4" type="video/mp4">
+      <!-- Silent 2MB loop autoplays; the 8MB version with sound loads on request. -->
+      <div class="hero-recap-player" data-recap data-full="assets/video/toj-2026-recap.mp4">
+        <video class="recap-video" autoplay muted loop playsinline preload="auto"
+               poster="assets/video/toj-2026-recap-poster.jpg">
+          <source src="assets/video/toj-2026-recap-loop.mp4" type="video/mp4">
           <p data-ja="お使いのブラウザは動画に対応していません。">Your browser does not support the video tag.</p>
         </video>
+        <button class="recap-sound" type="button" data-ja="音を出す">Sound on</button>
       </div>
     </div>
 
@@ -97,6 +113,10 @@
     <div>
       <p class="label" data-ja="次のイベント">Next up</p>
       <p class="event-name">Sushi Pop · <span data-ja="8月16日（日）">Sunday, Aug 16</span></p>
+      <!-- Sushi Pop is not on sale yet, so the ask is the notification.
+           When tickets go live, point this at the ticket URL and say "Get tickets". -->
+      <a class="btn next-up-cta" href="https://www.instagram.com/tasteofjpn/"
+         target="_blank" rel="noopener" data-ja="発売の通知を受け取る">Get notified</a>
     </div>
     <div class="countdown" data-target="2026-08-16T11:00:00-07:00" role="timer">
       <div class="cd-cell"><div class="cd-num" data-cd="days">0</div><div class="cd-label" data-ja="日">Days</div></div>
@@ -111,7 +131,7 @@
 <section class="section" id="events">
   <div class="container">
     <p class="eyebrow reveal" data-ja="2026年 夏">Summer 2026</p>
-    <h2 class="section-title reveal" data-delay="1" data-ja="8月、イベントが<br>2つあります。">Two festivals.<br>One summer.</h2>
+    <h2 class="section-title reveal" data-delay="1" data-ja="8月、イベントが<br>2つあります。">Two events.<br>One August.</h2>
     <p class="section-lead reveal" data-delay="2" data-ja="気になるチラシをタップして、詳しくチェックしてください。">Pick a flyer and step inside.</p>
 
     <div class="event-grid" style="margin-top: 48px;">
@@ -119,26 +139,29 @@
       <a class="event-card reveal" data-tilt="6" href="events/sushi-pop.html">
         <div class="flyer">
           <span class="date-ribbon">SUN · AUG 16</span>
+          <!-- Swap to <span class="status-badge on-sale">On sale now</span> when the Sushi Pop ticket URL exists. -->
+          <span class="status-badge coming-soon" data-ja="販売前">Coming soon</span>
           <img src="assets/img/sushi-pop-card.jpg" alt="Sushi Pop · sushi, sake and Japanese culture in Little Tokyo" loading="lazy">
         </div>
         <div class="meta">
           <h3>SUSHI POP</h3>
           <p class="venue" data-ja="リトル東京 · JACCC · ロサンゼルス">Little Tokyo · JACCC · Los Angeles</p>
-          <p class="tagline" data-ja="食べ放題。楽しみ放題。">All you can eat. All you can enjoy.</p>
-          <span class="card-cta" data-ja="この世界に入る">Enter this world</span>
+          <p class="tagline" data-ja="日系ウィークのスペシャルイベント。">A Nisei Week special in Little Tokyo.</p>
+          <span class="card-cta" data-ja="内容を見る">See what's planned</span>
         </div>
       </a>
 
       <a class="event-card reveal" data-delay="1" data-tilt="6" href="events/sip-of-japan.html">
         <div class="flyer">
           <span class="date-ribbon">SUN · AUG 30</span>
+          <span class="status-badge on-sale" data-ja="チケット販売中">On sale now</span>
           <img src="assets/img/sip-flyer.jpg" alt="Sip of Japan flyer · August 30 at Torrance Cultural Arts Center" loading="lazy">
         </div>
         <div class="meta">
           <h3>SIP OF JAPAN</h3>
           <p class="venue" data-ja="トーランス・カルチュラル・アーツ・センター">Torrance Cultural Arts Center</p>
           <p class="tagline" data-ja="日本酒・寿司・日本文化のプレミアム体験。">A premium sake, sushi &amp; culture experience.</p>
-          <span class="card-cta" data-ja="この世界に入る">Enter this world</span>
+          <span class="card-cta" data-ja="パスを選ぶ">Choose your pass</span>
         </div>
       </a>
     </div>
@@ -226,6 +249,6 @@
   </div>
 </footer>
 
-<script src="js/site.js?v=f6b8ecf0"></script>
+<script src="js/site.js?v=fffb9bc2"></script>
 </body>
 </html>
