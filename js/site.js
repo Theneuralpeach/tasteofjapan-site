@@ -42,7 +42,7 @@
     if (fromUrl === "ja" || fromUrl === "en") return fromUrl;
     const saved = localStorage.getItem("tojLang");
     if (saved === "ja" || saved === "en") return saved;
-    return navigator.language && navigator.language.toLowerCase().startsWith("ja") ? "ja" : "en";
+    return "en"; // デフォルトは全員英語。日本語は切替ボタン(またはURL ?lang=ja)で。切替内容は記憶される。
   };
 
   const writeLangToUrl = (lang) => {
