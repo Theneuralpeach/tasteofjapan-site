@@ -135,13 +135,6 @@ body.sushi-pop {
   box-shadow: var(--shadow);
   position: relative;
 }
-.sp-showcase .flyer-frame::after {
-  content: "★ OFFICIAL FLYER";
-  position: absolute; top: -16px; right: -14px;
-  background: var(--sp-navy); color: var(--sp-cream);
-  font-family: var(--font-display); font-weight: 400; font-size: 11px; letter-spacing: .18em;
-  padding: 7px 14px; border-radius: 999px; transform: rotate(3deg);
-}
 .sp-list { margin-top: 22px; display: grid; gap: 12px; }
 .sp-list li { display: flex; gap: 12px; align-items: baseline; font-size: 15.5px; }
 .sp-list li::before { content: "✦"; color: var(--sp-pink); font-size: 13px; }
