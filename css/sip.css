@@ -365,7 +365,8 @@ body.sip .btn-ticket:hover { box-shadow: 0 10px 26px rgba(185,138,47,.5); }
   .vendor-grid { grid-template-columns: repeat(3, 1fr); }
   .sponsor-logos { grid-template-columns: repeat(3, 1fr); }
   .v-logo { height: 96px; padding: 12px; }
-  .s-logo { height: 72px; }
+  .s-logo { height: 72px; padding: 8px 10px; }
+  .s-logo img { max-height: 48px; }
 }
 
 /* ---------- workshops on the day ---------- */
