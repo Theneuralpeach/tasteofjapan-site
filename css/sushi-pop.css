@@ -231,16 +231,22 @@ body.sushi-pop .way:hover { border-color: var(--sp-pink); }
   filter: drop-shadow(0 14px 46px rgba(0,0,0,.45));
 }
 
-.sp-hero-title { margin: 24px auto 12px; line-height: .98; }
-.sp-hero-title .sp-big {
+.sp-hero-title { margin: 8px auto 12px; }
+.sp-hero-title .sp-line {
   display: block; font-family: var(--font-display); font-weight: 400;
-  font-size: clamp(54px, 12.5vw, 150px); letter-spacing: .01em; color: #fff;
-  text-shadow: 0 14px 46px rgba(0,0,0,.45);
+  color: #fff; text-shadow: 0 14px 46px rgba(0,0,0,.45);
 }
-.sp-hero-title .sp-post {
-  display: block; margin-top: 16px;
-  font-family: var(--font-display); font-weight: 400; text-transform: uppercase;
-  letter-spacing: .26em; font-size: clamp(13px, 2.5vw, 23px); color: var(--sp-cream);
+.sp-hero-title .sp-line-org {
+  font-size: clamp(26px, 5.4vw, 62px); letter-spacing: .04em; text-transform: uppercase;
+  color: var(--sp-cream); line-height: 1.08;
+}
+.sp-hero-title .sp-line-collab {
+  font-size: clamp(24px, 4.6vw, 52px); letter-spacing: .01em;
+  margin: 6px 0; line-height: 1.1;
+}
+.sp-hero-title .sp-line-event {
+  font-size: clamp(42px, 9.2vw, 112px); letter-spacing: .01em; text-transform: uppercase;
+  line-height: 1.02; margin-top: 4px;
 }
 
 /* the swash was sized for the old text title; soften it behind the brush logo */
