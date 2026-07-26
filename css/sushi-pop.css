@@ -11,85 +11,150 @@ body.sushi-pop {
   --sp-cream: #f3ead8;
   --sp-gold: #d3a13f;
   --sp-cyan: #5ec8e5;
+  /* Two typefaces on this page, no more: a condensed display face for every
+     heading and label, and the body gothic for prose. Bebas has no Japanese
+     glyphs, so the JA toggle falls through to the gothic by design. */
+  --font-display: "Bebas Neue", "Zen Kaku Gothic New", sans-serif;
+  --font-brush: "Bebas Neue", "Zen Kaku Gothic New", sans-serif;
+  --font-num: "Bebas Neue", "Zen Kaku Gothic New", sans-serif;
   background: var(--sp-cream);
   color: var(--sp-navy);
 }
 
-/* ---------- hero ---------- */
+/* ---------- hero ----------
+   Direction: dark editorial poster. One large photograph, a left-aligned
+   condensed title stack, magenta as the only accent. Nothing is centred
+   and nothing is decorative. */
 .sp-hero {
   position: relative; overflow: hidden;
-  text-align: center;
-  color: #fff;
+  background: var(--sp-navy-deep);
+  color: var(--sp-cream);
   padding-top: var(--header-h);
-  background:
-    radial-gradient(1100px 520px at 82% 108%, rgba(211, 161, 63, .5), transparent 60%),
-    radial-gradient(900px 600px at 12% 112%, rgba(232, 56, 109, .42), transparent 58%),
-    linear-gradient(180deg, #0d1122 0%, #1b2340 42%, #55284e 74%, #a03a58 100%);
 }
-/* halftone dots */
+/* One quiet halftone wash so the flat navy is not dead. Masked so it fades
+   out before it reaches the type. */
 .sp-hero::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(rgba(255,255,255,.13) 1px, transparent 1.6px);
-  background-size: 22px 22px;
-  mask-image: linear-gradient(200deg, rgba(0,0,0,.9), transparent 55%);
-  -webkit-mask-image: linear-gradient(200deg, rgba(0,0,0,.9), transparent 55%);
+  background-image: radial-gradient(rgba(243, 234, 216, .1) 1px, transparent 1.6px);
+  background-size: 26px 26px;
+  mask-image: linear-gradient(215deg, rgba(0,0,0,.85), transparent 48%);
+  -webkit-mask-image: linear-gradient(215deg, rgba(0,0,0,.85), transparent 48%);
 }
-/* brush swash behind title */
-.sp-hero .swash {
-  position: absolute; z-index: 1; width: min(880px, 96vw); height: clamp(110px, 24vw, 190px);
-  top: 50%; left: 50%; transform: translate(-50%, -66%) rotate(-2.4deg);
-  background: var(--sp-navy-deep);
-  border-radius: 46% 54% 52% 48% / 62% 48% 60% 40%;
-  box-shadow: 0 30px 80px rgba(0,0,0,.4);
+.sp-hero-grid {
+  position: relative; z-index: 2;
+  width: min(1280px, 92vw); margin-inline: auto;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .92fr);
+  align-items: center; gap: clamp(30px, 4.6vw, 72px);
+  padding: clamp(52px, 6.4vw, 96px) 0 clamp(58px, 7.4vw, 108px);
 }
-.sp-hero-inner { position: relative; z-index: 2; padding: clamp(38px, 6vw, 70px) 18px clamp(56px, 8vw, 96px); width: 100%; }
-.sp-badge {
-  display: inline-block;
-  font-family: var(--font-display); font-weight: 400; font-size: 13.5px; letter-spacing: .3em; text-transform: uppercase;
-  color: var(--sp-cream);
-  border: 1.6px solid rgba(243, 234, 216, .55);
-  padding: 8px 22px; border-radius: 999px;
-  background: rgba(13, 17, 34, .5); backdrop-filter: blur(4px);
-}
-.sp-title {
-  font-family: var(--font-brush);
-  font-size: clamp(64px, 14vw, 172px);
-  line-height: .95; margin: 26px 0 6px;
-  text-shadow: 0 14px 50px rgba(0,0,0,.45);
-}
-.sp-title .pop { color: var(--sp-pink-hot); text-shadow: 0 0 26px rgba(255, 77, 136, .65), 0 14px 50px rgba(0,0,0,.45); }
-.sp-tagline {
-  font-family: var(--font-display); font-weight: 400; letter-spacing: .22em; text-transform: uppercase;
-  font-size: clamp(14px, 2vw, 19px);
-}
-.sp-tagline .eat { color: var(--sp-cyan); }
-.sp-tagline .enjoy { color: var(--sp-pink-hot); }
-.sp-meta-chips { margin-top: 26px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.sp-chip {
-  font-size: 13px; letter-spacing: .1em;
-  border: 1.4px solid rgba(255,255,255,.4); border-radius: 999px;
-  padding: 8px 18px; background: rgba(255,255,255,.08); backdrop-filter: blur(4px);
-}
-.sp-hero .countdown { justify-content: center; margin-top: 34px; }
-.sp-hero .cd-num { color: var(--sp-cream); text-shadow: 0 0 18px rgba(255,77,136,.4); }
-.sp-hero-ctas { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-.btn.sp-cta { background: var(--sp-pink); color: #fff; box-shadow: 0 12px 34px rgba(232,56,109,.45); }
-.btn.sp-cta:hover { background: var(--sp-pink-hot); }
 
-/* neon sign */
-.neon-sign {
-  position: absolute; top: 108px; right: 6vw; z-index: 2;
-  font-family: var(--font-brush); font-size: clamp(18px, 2.6vw, 30px);
-  color: #9ee8ff; transform: rotate(4deg);
-  text-shadow: 0 0 8px #6fd6f7, 0 0 24px #2ea8d4, 0 0 46px #1b7ea6;
-  animation: neon-flicker 4.6s linear infinite;
+.sp-org {
+  font-family: var(--font-display);
+  font-size: clamp(12px, 1.4vw, 15px);
+  letter-spacing: .34em; text-transform: uppercase;
+  color: var(--sp-pink-hot);
+  margin: 0 0 clamp(16px, 2.2vw, 26px);
 }
-@keyframes neon-flicker {
-  0%, 6%, 9%, 100% { opacity: 1; }
-  7%, 8% { opacity: .4; }
-  54% { opacity: 1; } 55% { opacity: .55; } 56% { opacity: 1; }
+
+.sp-title { margin: 0; }
+.sp-title-sub {
+  display: block; font-family: var(--font-display);
+  font-size: clamp(16px, 2.3vw, 27px);
+  letter-spacing: .27em; text-transform: uppercase;
+  color: rgba(243, 234, 216, .7);
+  margin-bottom: clamp(5px, .8vw, 11px);
 }
-@media (max-width: 720px) { .neon-sign { display: none; } }
+.sp-title-main {
+  display: block; font-family: var(--font-display);
+  font-size: clamp(54px, 8.2vw, 126px);
+  line-height: .85; letter-spacing: .004em; text-transform: uppercase;
+  color: var(--sp-cream);
+}
+
+/* The strapline is the second voice, not body copy. */
+.sp-eat {
+  font-family: var(--font-display);
+  font-size: clamp(21px, 2.8vw, 39px);
+  line-height: 1.16; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--sp-cream);
+  margin: clamp(22px, 2.9vw, 34px) 0 0;
+}
+.sp-eat .hot { color: var(--sp-pink-hot); }
+
+.sp-facts {
+  display: flex; flex-wrap: wrap; gap: clamp(26px, 3.6vw, 52px);
+  margin: clamp(26px, 3.3vw, 40px) 0 0;
+}
+.sp-facts dt {
+  font-size: 11px; letter-spacing: .3em; text-transform: uppercase;
+  color: rgba(243, 234, 216, .48); margin-bottom: 7px;
+}
+.sp-facts dd {
+  margin: 0; font-family: var(--font-display);
+  font-size: clamp(15px, 1.7vw, 20px); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--sp-cream);
+}
+
+.sp-hero-ctas {
+  margin-top: clamp(30px, 3.7vw, 44px);
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: clamp(18px, 2.3vw, 30px);
+}
+.btn.sp-cta { background: var(--sp-pink); color: #fff; box-shadow: 0 14px 38px rgba(232, 56, 109, .38); }
+.btn.sp-cta:hover { background: var(--sp-pink-hot); }
+.sp-follow {
+  font-family: var(--font-display); font-size: 14px;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(243, 234, 216, .76);
+  border-bottom: 1.5px solid rgba(243, 234, 216, .28);
+  padding-bottom: 4px;
+  transition: color .22s ease, border-color .22s ease;
+}
+.sp-follow:hover { color: var(--sp-cream); border-bottom-color: var(--sp-pink-hot); }
+
+/* Countdown is supporting detail here, so it sits quiet under a hairline. */
+.sp-countdown {
+  justify-content: flex-start;
+  gap: clamp(16px, 2.1vw, 30px);
+  margin-top: clamp(32px, 4.2vw, 50px);
+  padding-top: clamp(22px, 2.8vw, 32px);
+  border-top: 1px solid rgba(243, 234, 216, .16);
+}
+.sp-countdown .cd-cell { min-width: 0; text-align: left; }
+.sp-countdown .cd-num {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(26px, 2.9vw, 37px); line-height: 1;
+  color: var(--sp-cream);
+}
+.sp-countdown .cd-label {
+  font-size: 10.5px; letter-spacing: .26em; opacity: 1;
+  color: rgba(243, 234, 216, .48); margin-top: 8px;
+}
+
+/* A tall panel, so the picture carries the same weight as the type column
+   instead of floating in the middle of it. */
+.sp-hero-photo img {
+  width: 100%; display: block;
+  aspect-ratio: 5 / 6; object-fit: cover; object-position: 52% 50%;
+  border-radius: 2px;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, .5);
+}
+
+/* Japanese is full-width and carries its own spacing, so the Latin tracking
+   and display sizes overflow the column. Re-set them for the JA toggle. */
+html[lang="ja"] .sp-org { letter-spacing: .2em; }
+html[lang="ja"] .sp-title-sub { font-size: clamp(14px, 1.8vw, 20px); letter-spacing: .16em; }
+html[lang="ja"] .sp-title-main { font-size: clamp(34px, 5.2vw, 76px); line-height: 1.16; letter-spacing: .02em; }
+html[lang="ja"] .sp-eat { font-size: clamp(20px, 2.5vw, 34px); line-height: 1.4; letter-spacing: .04em; }
+html[lang="ja"] .sp-facts dd { letter-spacing: .04em; }
+html[lang="ja"] .sp-follow { letter-spacing: .1em; }
+
+@media (max-width: 900px) {
+  .sp-hero-grid { grid-template-columns: 1fr; gap: clamp(26px, 5vw, 40px); }
+  /* Lead with the photograph on a phone, then the name. */
+  .sp-hero-photo { order: -1; }
+  .sp-hero-photo img { aspect-ratio: 16 / 10; object-fit: cover; }
+}
 
 /* ---------- marquee band ---------- */
 .sp-marquee {
@@ -225,38 +290,8 @@ body.sushi-pop .way:hover { border-color: var(--sp-pink); }
 /* lineup section sits on dark navy — lift the body copy for contrast */
 .sp-lineup .section-lead { color: rgba(243, 234, 216, .82); }
 
-/* brush lettering hero logo */
-.sp-hero-logo {
-  width: min(800px, 88vw); height: auto; display: block; margin: 20px auto 10px;
-  filter: drop-shadow(0 14px 46px rgba(0,0,0,.45));
-}
 
-/* The official artwork carries the title. It is a background image so it
-   can crop toward the centre on narrow screens and keep the lockup legible. */
-.sp-hero-art {
-  width: 100%;
-  aspect-ratio: 3.42 / 1;
-  background: url("../assets/img/nisei-hero-art.jpg") center / cover no-repeat;
-}
-.sp-eat {
-  font-family: var(--font-body); font-weight: 700;
-  text-transform: uppercase; letter-spacing: .04em; line-height: 1.12;
-  font-size: clamp(30px, 6.4vw, 68px);
-  color: var(--sp-cream);
-  margin: 0 0 6px;
-  text-shadow: 0 10px 40px rgba(0,0,0,.5);
-}
-.sp-eat .hot { color: var(--sp-pink-hot); }
-@media (max-width: 720px) {
-  .sp-hero-art { aspect-ratio: 1.55 / 1; }
-}
 
-/* the swash was sized for the old text title; soften it behind the brush logo */
-.sp-hero .swash {
-  width: min(1000px, 96vw); height: clamp(150px, 30vw, 300px);
-  transform: translate(-50%, -58%) rotate(-2.4deg);
-  opacity: .5; filter: blur(18px);
-}
 
 /* ticket button carries the sushi pop pink */
 body.sushi-pop .btn-ticket {
