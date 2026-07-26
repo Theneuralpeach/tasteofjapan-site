@@ -231,6 +231,18 @@ body.sushi-pop .way:hover { border-color: var(--sp-pink); }
   filter: drop-shadow(0 14px 46px rgba(0,0,0,.45));
 }
 
+.sp-hero-title { margin: 24px auto 12px; line-height: .98; }
+.sp-hero-title .sp-big {
+  display: block; font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(54px, 12.5vw, 150px); letter-spacing: .01em; color: #fff;
+  text-shadow: 0 14px 46px rgba(0,0,0,.45);
+}
+.sp-hero-title .sp-post {
+  display: block; margin-top: 16px;
+  font-family: var(--font-display); font-weight: 400; text-transform: uppercase;
+  letter-spacing: .26em; font-size: clamp(13px, 2.5vw, 23px); color: var(--sp-cream);
+}
+
 /* the swash was sized for the old text title; soften it behind the brush logo */
 .sp-hero .swash {
   width: min(1000px, 96vw); height: clamp(150px, 30vw, 300px);

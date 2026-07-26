@@ -135,7 +135,7 @@
   });
 
   /* ---------- countdown ----------
-     <div class="countdown" data-target="2026-08-16T11:00:00-07:00"> */
+     <div class="countdown" data-target="2026-08-22T11:00:00-07:00"> */
   const pad = (n) => String(n).padStart(2, "0");
   document.querySelectorAll(".countdown[data-target]").forEach((box) => {
     const target = new Date(box.dataset.target).getTime();
