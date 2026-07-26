@@ -309,10 +309,12 @@ html[lang="ja"] .sp-date { font-size: clamp(28px, 4.6vw, 66px); letter-spacing: 
   font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
   margin: 8px 0 0; opacity: .7;
 }
+/* Kids and under-3 are not sold as their own passes, so they sit quietly
+   under the blocks rather than competing with them. */
 .sp-free-note {
   font-family: var(--font-display); font-weight: 700;
-  font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--sp-yellow); margin: clamp(18px, 2.2vw, 26px) auto 0;
+  font-size: 12px; letter-spacing: .08em;
+  color: rgba(255,255,255,.7); margin: clamp(16px, 2vw, 22px) auto 0;
 }
 .tier-includes {
   margin: clamp(14px, 1.8vw, 20px) 0 0; padding: clamp(14px, 1.8vw, 18px) 0 0;
