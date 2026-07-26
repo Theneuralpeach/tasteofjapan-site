@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&family=Zen+Old+Mincho:wght@700;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Permanent+Marker&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/site.css?v=8499d69c">
-<link rel="stylesheet" href="../css/sushi-pop.css?v=9d38c6fb">
+<link rel="stylesheet" href="../css/sushi-pop.css?v=84a13891">
 <link rel="alternate" hreflang="en" href="https://www.tasteofjpn.com/events/sushi-pop.html">
 <link rel="alternate" hreflang="ja" href="https://www.tasteofjpn.com/events/sushi-pop.html?lang=ja">
 <link rel="alternate" hreflang="x-default" href="https://www.tasteofjpn.com/events/sushi-pop.html">
@@ -72,21 +72,18 @@
 
 <!-- hero -->
 <section class="sp-hero">
-  <div class="neon-sign">Little Tokyo</div>
-  <div class="swash" aria-hidden="true"></div>
+  <!-- The title lives in the official JACCC artwork, so the h1 is for
+       screen readers and search engines only. -->
+  <h1 class="sr-only">Tanoshii Project &times; JACCC Special Collaboration Nisei Week Event</h1>
+  <div class="sp-hero-art" role="img"
+       aria-label="Tanoshii Project x JACCC Special Collaboration Nisei Week Event"></div>
   <div class="sp-hero-inner">
-    <h1 class="sp-hero-title reveal" data-delay="1">
-      <span class="sp-line sp-line-org" data-ja="TANOSHII PROJECT × JACCC">TANOSHII PROJECT &times; JACCC</span>
-      <span class="sp-line sp-line-collab" data-ja="スペシャルコラボレーション">Special Collaboration</span>
-      <span class="sp-line sp-line-event" data-ja="二世ウィーク・イベント">Nisei Week Event</span>
-    </h1>
-    <p class="sp-tagline reveal" data-delay="2" data-ja="<span class=&quot;eat&quot;>寿司</span>と<span class=&quot;enjoy&quot;>シティポップ</span>の一日。">
-      <span class="eat">Sushi</span> and <span class="enjoy">city pop</span>, for one day.
+    <p class="sp-eat reveal" data-delay="1" data-ja="<span class=&quot;hot&quot;>食べ</span>放題。<br><span class=&quot;hot&quot;>楽しみ</span>放題。">
+      All you can <span class="hot">eat</span>.<br>All you can <span class="hot">enjoy</span>.
     </p>
     <div class="sp-meta-chips reveal" data-delay="2">
       <span class="sp-chip" data-ja="8月22日（土）2026年">Saturday, August 22, 2026</span>
       <span class="sp-chip" data-ja="リトル東京 · JACCC">Little Tokyo · JACCC</span>
-      <span class="sp-chip" data-ja="日本の食と文化の体験">A Japanese food &amp; culture experience</span>
     </div>
     <div class="countdown reveal" data-delay="3" data-target="2026-08-22T11:00:00-07:00" role="timer">
       <div class="cd-cell"><div class="cd-num" data-cd="days">0</div><div class="cd-label" data-ja="日">Days</div></div>
@@ -113,7 +110,9 @@
 <section class="section" style="padding-top: 20px;">
   <div class="container sp-showcase">
     <div class="flyer-frame reveal" data-tilt="5">
-      <img src="../assets/img/sushi-pop-flyer.jpg" alt="Tanoshii Project x JACCC Special Collaboration Nisei Week Event official flyer, Saturday August 22, 2026 at JACCC in Little Tokyo">
+      <!-- The hero already shows the headline artwork, so this slot carries the
+           details flyer instead: pricing, session times, and the venue map. -->
+      <img src="../assets/img/nisei-week-pricing-flyer.jpg" alt="Nisei Week Event details flyer: Premium $100, Basic $75, Senior $55, two sessions at 12pm and 4pm, 200 guests, JACCC in Little Tokyo">
     </div>
     <div>
       <p class="eyebrow reveal" data-ja="どんな日？">What kind of day is it</p>

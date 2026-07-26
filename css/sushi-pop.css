@@ -17,10 +17,10 @@ body.sushi-pop {
 
 /* ---------- hero ---------- */
 .sp-hero {
-  min-height: 100svh;
   position: relative; overflow: hidden;
-  display: grid; place-items: center; text-align: center;
+  text-align: center;
   color: #fff;
+  padding-top: var(--header-h);
   background:
     radial-gradient(1100px 520px at 82% 108%, rgba(211, 161, 63, .5), transparent 60%),
     radial-gradient(900px 600px at 12% 112%, rgba(232, 56, 109, .42), transparent 58%),
@@ -42,7 +42,7 @@ body.sushi-pop {
   border-radius: 46% 54% 52% 48% / 62% 48% 60% 40%;
   box-shadow: 0 30px 80px rgba(0,0,0,.4);
 }
-.sp-hero-inner { position: relative; z-index: 2; padding: 130px 18px 150px; width: 100%; }
+.sp-hero-inner { position: relative; z-index: 2; padding: clamp(38px, 6vw, 70px) 18px clamp(56px, 8vw, 96px); width: 100%; }
 .sp-badge {
   display: inline-block;
   font-family: var(--font-display); font-weight: 400; font-size: 13.5px; letter-spacing: .3em; text-transform: uppercase;
@@ -231,22 +231,24 @@ body.sushi-pop .way:hover { border-color: var(--sp-pink); }
   filter: drop-shadow(0 14px 46px rgba(0,0,0,.45));
 }
 
-.sp-hero-title { margin: 8px auto 12px; }
-.sp-hero-title .sp-line {
-  display: block; font-family: var(--font-display); font-weight: 400;
-  color: #fff; text-shadow: 0 14px 46px rgba(0,0,0,.45);
+/* The official artwork carries the title. It is a background image so it
+   can crop toward the centre on narrow screens and keep the lockup legible. */
+.sp-hero-art {
+  width: 100%;
+  aspect-ratio: 3.42 / 1;
+  background: url("../assets/img/nisei-hero-art.jpg") center / cover no-repeat;
 }
-.sp-hero-title .sp-line-org {
-  font-size: clamp(26px, 5.4vw, 62px); letter-spacing: .04em; text-transform: uppercase;
-  color: var(--sp-cream); line-height: 1.08;
+.sp-eat {
+  font-family: var(--font-body); font-weight: 700;
+  text-transform: uppercase; letter-spacing: .04em; line-height: 1.12;
+  font-size: clamp(30px, 6.4vw, 68px);
+  color: var(--sp-cream);
+  margin: 0 0 6px;
+  text-shadow: 0 10px 40px rgba(0,0,0,.5);
 }
-.sp-hero-title .sp-line-collab {
-  font-size: clamp(24px, 4.6vw, 52px); letter-spacing: .01em;
-  margin: 6px 0; line-height: 1.1;
-}
-.sp-hero-title .sp-line-event {
-  font-size: clamp(42px, 9.2vw, 112px); letter-spacing: .01em; text-transform: uppercase;
-  line-height: 1.02; margin-top: 4px;
+.sp-eat .hot { color: var(--sp-pink-hot); }
+@media (max-width: 720px) {
+  .sp-hero-art { aspect-ratio: 1.55 / 1; }
 }
 
 /* the swash was sized for the old text title; soften it behind the brush logo */
