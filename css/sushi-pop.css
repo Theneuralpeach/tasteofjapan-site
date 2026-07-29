@@ -117,6 +117,18 @@ body.sushi-pop {
   border-radius: 0; box-shadow: none;
 }
 .btn.sp-cta:hover { background: #3fe1e3; }
+/* Paused ticket button: reads as a status, not a dead link. */
+.btn.sp-cta.is-paused {
+  background: rgba(255,255,255,.1); color: rgba(255,255,255,.75);
+  border: 1.5px solid rgba(255,255,255,.28); cursor: default;
+}
+.btn.sp-cta.is-paused::after { content: none; }
+.btn.sp-cta.is-paused:hover { background: rgba(255,255,255,.1); transform: none; }
+.sp-paused-note {
+  margin: 16px auto 0; max-width: 52ch;
+  font-size: 13.5px; line-height: 1.6; color: rgba(255,255,255,.7);
+}
+.sp-paused-note a { color: var(--sp-cyan); border-bottom: 1px solid currentColor; }
 .sp-follow {
   font-family: var(--font-display); font-weight: 700; font-size: 13.5px;
   letter-spacing: .16em; text-transform: uppercase;
@@ -378,7 +390,13 @@ body.sushi-pop .ways-lead { color: rgba(255,255,255,.72); }
   color: #fff;
 }
 .sp-venue-card h3 { color: #fff; }
-.sp-venue-card .addr { color: rgba(255,255,255,.7); }
+.sp-venue-card .addr { color: rgba(255,255,255,.7); line-height: 1.65; }
+/* The room, not the building, is what stops people getting lost. */
+.sp-venue-card .venue-flag {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--sp-cyan); margin: 10px 0 12px;
+}
 .sp-venue-card .lines { color: rgba(255,255,255,.9); }
 .sp-venue-card .lines .k { color: var(--sp-cyan); }
 .sp-venue-card .btn {
