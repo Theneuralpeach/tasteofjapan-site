@@ -280,7 +280,7 @@ html[lang="ja"] .sp-date { font-size: clamp(28px, 4.6vw, 66px); letter-spacing: 
 .menu-col li { font-size: 14.5px; line-height: 1.4; color: rgba(255,255,255,.86); }
 .menu-note {
   margin-top: clamp(26px, 3.2vw, 38px);
-  font-size: 14px; color: rgba(255,255,255,.62); max-width: 62ch;
+  font-size: 14px; color: rgba(255,255,255,.80); max-width: 62ch;
 }
 
 /* ---------- tickets ----------
@@ -338,7 +338,7 @@ html[lang="ja"] .sp-date { font-size: clamp(28px, 4.6vw, 66px); letter-spacing: 
 .sp-free-note {
   font-family: var(--font-display); font-weight: 700;
   font-size: 12px; letter-spacing: .08em;
-  color: rgba(255,255,255,.7); margin: clamp(16px, 2vw, 22px) auto 0;
+  color: rgba(255,255,255,.84); margin: clamp(16px, 2vw, 22px) auto 0;
 }
 .tier-includes {
   margin: clamp(14px, 1.8vw, 20px) 0 0; padding: clamp(14px, 1.8vw, 18px) 0 0;
@@ -409,9 +409,12 @@ body.sushi-pop .btn-ticket:hover { background: var(--sp-pink-hot); box-shadow: 0
 
 /* ---------- value calc + smart-pick tip (added 2026-07-28) ---------- */
 .sp-value {
-  max-width: 560px; margin: 34px auto 0;
+  max-width: 900px; margin: 22px auto 0;
   background: var(--sp-ink-2); border: 1px solid rgba(255,255,255,.09);
-  border-radius: 16px; padding: 26px 28px;
+  border-radius: 16px; padding: 28px clamp(20px, 4vw, 44px);
+}
+.sp-value h3, .sp-value .sp-calc, .sp-value .sp-value-tip {
+  max-width: 600px; margin-left: auto; margin-right: auto;
 }
 .sp-value h3 {
   font-family: var(--font-display); font-weight: 800; font-size: 20px;
@@ -447,3 +450,7 @@ body.sushi-pop .btn-ticket:hover { background: var(--sp-pink-hot); box-shadow: 0
   color: var(--sp-cream); margin-bottom: 6px;
 }
 .sp-a { font-size: 15px; color: rgba(255,255,255,.72); }
+
+/* ---------- rhythm fix: close dead band between about and menu (2026-07-29) ---------- */
+.sp-about { padding-bottom: clamp(36px, 4.5vw, 60px); }
+.sp-menu  { padding-top: clamp(40px, 5vw, 64px); }
