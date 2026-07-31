@@ -35,7 +35,7 @@ body.about-page {
   font-size: clamp(34px, 5.2vw, 62px); line-height: 1.12;
   color: #fff; margin: 16px 0 22px; max-width: 900px;
 }
-.about-lead { max-width: 660px; font-size: 17px; line-height: 1.8; color: rgba(247,241,227,.86); }
+.about-lead { max-width: 660px; font-size: 18px; line-height: 1.8; color: rgba(247,241,227,.86); }
 
 /* ---------- partnership ---------- */
 .partner-section { background: #fff; }
@@ -44,7 +44,7 @@ body.about-page {
 .partner-section .tier-table { margin-top: 48px; }
 .partner-section .sponsor-close { text-align: center; margin-top: 48px; }
 .partner-section .sponsor-close p {
-  font-family: var(--font-serif-en); font-style: italic; font-size: 19px;
+  font-family: var(--font-serif-en); font-style: italic; font-size: 20px;
   margin-bottom: 22px; color: var(--ink-soft);
 }
 
@@ -62,7 +62,7 @@ body.about-page {
 .tier:last-child { padding-right: 0; }
 .tier.is-top { border-top: 2px solid var(--sip-gold); margin-top: -1px; }
 .tier-flag {
-  font-family: var(--font-display); font-weight: 400; font-size: 11px; letter-spacing: .26em;
+  font-family: var(--font-display); font-weight: 400; font-size: 12.5px; letter-spacing: .26em;
   text-transform: uppercase; color: var(--sip-gold); margin-bottom: 12px;
 }
 .tier-name {
@@ -70,10 +70,10 @@ body.about-page {
   font-size: 25px; line-height: 1.2; color: var(--sip-navy);
 }
 .tier-note {
-  font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
-  opacity: .62; margin: 8px 0 24px;
+  font-size: 15px; letter-spacing: .1em;
+  opacity: .72; margin: 8px 0 24px;
 }
-.tier-list { display: grid; gap: 11px; font-size: 14.5px; line-height: 1.55; }
+.tier-list { display: grid; gap: 11px; font-size: 16px; line-height: 1.55; }
 .tier-list li { padding-left: 15px; position: relative; color: #3c4557; }
 .tier-list li::before {
   content: ""; position: absolute; left: 0; top: .62em;
@@ -89,7 +89,7 @@ body.about-page {
   border-top: 1px solid rgba(27,42,74,.14); padding-top: 34px;
 }
 .contact-label {
-  font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
+  font-size: 12.5px; letter-spacing: .24em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 8px;
 }
 .contact-value { font-family: var(--font-serif-en); font-size: 22px; }
