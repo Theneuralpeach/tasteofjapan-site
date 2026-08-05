@@ -395,3 +395,24 @@ body.sip .btn-ticket:hover { box-shadow: 0 10px 26px rgba(185,138,47,.5); }
 .pillar-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s cubic-bezier(.22,.61,.36,1); }
 .sip-pillar:hover .pillar-photo img { transform: scale(1.05); }
 .sip-pillar h3, .sip-pillar .jp, .sip-pillar p { padding-inline: 20px; }
+
+
+/* ---------- stage programme ---------- */
+.programme { margin-top: 40px; border-top: 1px solid rgba(185,138,47,.35); }
+.pg-row {
+  display: grid; grid-template-columns: 132px 1fr; gap: 24px;
+  padding: 20px 0; border-bottom: 1px solid rgba(29,36,51,.12); align-items: baseline;
+}
+.pg-time {
+  font-family: var(--font-num, inherit); font-weight: 700; font-size: 20px;
+  letter-spacing: .04em; color: var(--sip-gold); white-space: nowrap;
+}
+.pg-what { font-size: 21px; line-height: 1.45; }
+.pg-sub { display: block; font-size: 16.5px; color: rgba(29,36,51,.6); margin-top: 4px; }
+.pg-hi .pg-what { font-weight: 700; }
+.pg-hi .pg-time { color: var(--sip-red); }
+@media (max-width: 640px) {
+  .pg-row { grid-template-columns: 96px 1fr; gap: 16px; padding: 16px 0; }
+  .pg-time { font-size: 17px; }
+  .pg-what { font-size: 18px; }
+}
