@@ -416,3 +416,33 @@ body.sip .btn-ticket:hover { box-shadow: 0 10px 26px rgba(185,138,47,.5); }
   .pg-time { font-size: 17px; }
   .pg-what { font-size: 18px; }
 }
+
+/* ---- 見出し「- text -」の Sip 用カラー（形の定義は site.css 側・2026-08-04）---- */
+body.sip .eyebrow::after { background: var(--sip-gold); }
+body.sip .workshop .eyebrow::after { background: var(--sip-gold-soft); }
+
+/* ---- ワークショップ一覧＋申し込み（2026-08-04）---- */
+.wk-sessions { display: flex; flex-direction: column; gap: 22px; margin-top: 6px; }
+.wk-list .wk-sessions li {
+  padding: 18px 0 0; list-style: none;
+  border: 0; border-top: 1px solid rgba(220,191,124,.22);
+  border-radius: 0; background: none;
+}
+.wk-list .wk-sessions li:first-child { border-top: 0; padding-top: 0; }
+.wk-s-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 18px;
+}
+.wk-s-name {
+  font-family: var(--font-display); font-size: clamp(21px, 2.4vw, 27px); line-height: 1.2;
+}
+.wk-s-price { color: var(--sip-gold); font-weight: 700; font-size: 20px; white-space: nowrap; }
+.wk-s-desc { margin-top: 7px; font-size: 17.5px; line-height: 1.62; opacity: .84; max-width: 62ch; }
+.wk-s-when {
+  margin-top: 6px; font-size: 15px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--sip-gold-soft); opacity: .9;
+}
+.wk-note { margin-top: 26px; font-size: 17px; line-height: 1.6; opacity: .74; max-width: 64ch; }
+.wk-book { margin-top: 26px; display: inline-flex; }
+@media (max-width: 560px) {
+  .wk-s-head { flex-direction: column; gap: 2px; }
+}

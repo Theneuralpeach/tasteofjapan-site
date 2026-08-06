@@ -159,6 +159,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   color: var(--gold); font-weight: 700;
 }
 .eyebrow::before { content: ""; width: 34px; height: 1.5px; background: var(--gold); }
+.eyebrow::after { content: ""; width: 34px; height: 1.5px; background: var(--gold); }
 .section-title {
   font-family: var(--font-display); font-weight: 400;
   font-size: clamp(33px, 5.1vw, 58px);
@@ -443,6 +444,7 @@ body[data-sky="night"] .hero-stars { opacity: 1; }
 .workshop-wrap { display: grid; grid-template-columns: 1.12fr .88fr; gap: clamp(30px, 5vw, 64px); align-items: center; position: relative; z-index: 1; }
 .workshop .eyebrow { color: var(--gold-soft); }
 .workshop .eyebrow::before { background: var(--gold-soft); }
+.workshop .eyebrow::after { background: var(--gold-soft); }
 .workshop .section-title {
   font-family: var(--font-serif-en); font-style: italic; font-weight: 600;
   color: #fff; font-size: clamp(30px, 4.2vw, 50px); line-height: 1.1;
